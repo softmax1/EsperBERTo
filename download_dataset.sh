@@ -1,0 +1,1 @@
+wget -c -P data/ https://cdn-datasets.huggingface.co/EsperBERTo/data/oscar.eo.txt

@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Environments
+venv/
+.env
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Data, Tokenizer, Models
+data/
+tokenizer/
+**/esperberto-softmax0/
+**/esperberto-softmax1/
