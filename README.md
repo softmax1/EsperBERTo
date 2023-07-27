@@ -3,29 +3,23 @@ A test of the [Attention Is Off By One](https://www.evanmiller.org/attention-is-
 We’ll train a "small" model (84 M parameters = 6 layers, 768 hidden size, 12 attention heads) on Esperanto.
 In fact, we'll train two models, a baseline that uses the default softmax in its Attention mechanism, and a challenger that instead uses the proposed softmax1.
 
-This pipeline is based on this [blog post](https://huggingface.co/blog/how-to-train).
-The main difference is their dataloader is deprecated.
+This pipeline is based on this [blog post](https://huggingface.co/blog/how-to-train) with two differences.
+The biggest change is I subclassed the Roberta model to use a custom softmax1 activation function.
+Also, their dataloader is deprecated, so I swapped in the datasets package.
 
 ## Running
 I'm running on an AWS _g5.2xlarge_ EC2 instance with 1x Nvidia A10G GPU.
+Running takes about 5 hours and costs approximately $6.
 
-Steps:
+You can use the following script to reproduce my results: `screen -S run "bash runner.sh"`
+Don't forget to add your Hugging Face token and username to the env vars before running, e.g.
 ```
-git clone https://github.com/softmax1/EsperBERTo.git
-cd EsperBERTo
-source activate pytorch
-pip install -r requirements.txt
-emacs .env
->>> HUGGINGFACE_TOKEN=<mySecretTokenValue>
->>> HUGGINGFACE_USER=<myHFUserName>
-bash download_dataset.sh
-python train_tokenizer.py
-python train_model.py
-python train_model.py --use_softmax1
+echo "HUGGINGFACE_TOKEN=<mySecretTokenVariable>" > .env
+echo "HUGGINGFACE_USER=<myHFUserName>" >> .env
 ```
+To test before running in earnest, add the test_pipeline flag, e.g. `python train_model.py --test_pipeline`.
 
-To test `train_*.py` before running in earnest add the `--test_pipeline` flag.
 
 ## Output
-The dataset will be available on Hugging Face at `chriswmurphy/esperberto`.
-The models will also be available on Hugging Fact at `chriswmurphy/esperberto-softmax0` and `chriswmurphy/esperberto-softmax1`.
+The dataset is available on Hugging Face at [chriswmurphy/esperberto](https://huggingface.co/datasets/chriswmurphy/esperberto).
+The models will also be available on Hugging Face at `chriswmurphy/esperberto-softmax0` and `chriswmurphy/esperberto-softmax1`.

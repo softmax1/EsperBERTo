@@ -14,7 +14,8 @@ class Parser(Tap):
 
 
 def train(test_pipeline: bool = False):
-    paths = [str(x) for x in Path.cwd().glob("**/*.txt")]
+    data_dir = Path.cwd() / "data"
+    paths = [str(x) for x in data_dir.glob("**/*.txt")]
 
     # Initialize a tokenizer.json
     tokenizer = ByteLevelBPETokenizer()
@@ -32,7 +33,6 @@ def train(test_pipeline: bool = False):
         # Let's upload the dataset while we're at it
         try:
             login(token=getenv("HUGGINGFACE_TOKEN"))
-            data_dir = Path.cwd() / "data"
             dataset = load_dataset(path=str(data_dir))
             dataset.push_to_hub(repo_id=f"{getenv('HUGGINGFACE_USER')}/esperberto")
         except ValueError as e:
