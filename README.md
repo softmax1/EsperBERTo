@@ -22,4 +22,4 @@ To test before running in earnest, add the test_pipeline flag, e.g. `python trai
 
 ## Output
 The dataset is available on Hugging Face at [chriswmurphy/esperberto](https://huggingface.co/datasets/chriswmurphy/esperberto).
-The models will also be available on Hugging Face at `chriswmurphy/esperberto-softmax0` and `chriswmurphy/esperberto-softmax1`.
+The models will also be available on Hugging Face at [chriswmurphy/esperberto-softmax0](https://huggingface.co/chriswmurphy/esperberto-softmax0) and `chriswmurphy/esperberto-softmax1`.
