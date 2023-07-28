@@ -2,7 +2,8 @@ from pytest import fixture, approx
 from torch import LongTensor, randn, isfinite
 from transformers import RobertaConfig, RobertaForMaskedLM
 
-from src.modeling_roberta import RobertaForMaskedLMSoftmax1, RobertaSelfAttentionSoftmax1
+from src.modeling_roberta import RobertaForMaskedLM as RobertaForMaskedLMSoftmax1
+from src.modeling_roberta import RobertaSelfAttention as RobertaSelfAttentionSoftmax1
 
 
 @fixture(scope='session')
@@ -28,12 +29,17 @@ def config() -> RobertaConfig:
 
 def test_roberta_for_masked_lm_softmax0(config, num_params_in_millions):
     model_0 = RobertaForMaskedLM(config=config)
-    assert model_0.num_parameters() / 1e6 == approx(num_params_in_millions, 1)
+    print(model_0.num_parameters())
+    assert model_0.num_parameters() / 1e6 == approx(num_params_in_millions, abs=1)
 
 
 def test_roberta_for_masked_lm_softmax1(config, hidden_size, num_params_in_millions):
     model_1 = RobertaForMaskedLMSoftmax1(config=config)
-    assert model_1.num_parameters() / 1e6 == approx(num_params_in_millions, 1)
+    print(model_1.num_parameters())
+    assert model_1.num_parameters() / 1e6 == approx(num_params_in_millions, abs=1)
+
+    model_0 = RobertaForMaskedLM(config=config)
+    assert model_1.num_parameters() == model_0.num_parameters()
 
     n_samples = 3
     input_ids = LongTensor([[x] for x in range(n_samples)])
