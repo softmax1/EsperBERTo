@@ -15,7 +15,7 @@ from transformers import (
     RobertaForMaskedLM
 )
 
-from src.modeling_roberta import RobertaForMaskedLM as RobertaForMaskedLMSoftmax1
+from src.modeling_roberta import RobertaForMaskedLMSoftmax1
 from src.statistics import compute_statistics, save_statistics
 
 
