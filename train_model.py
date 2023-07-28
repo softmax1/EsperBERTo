@@ -15,7 +15,8 @@ from transformers import (
     RobertaForMaskedLM
 )
 
-from src.modeling_roberta import RobertaForMaskedLMSoftmax1
+from src.modeling_roberta import RobertaForMaskedLM as RobertaForMaskedLMSoftmax1
+from src.statistics import compute_statistics, save_statistics
 
 
 class Parser(Tap):
@@ -85,12 +86,15 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     # Start training
     trainer.train()
 
-    # Save final model (+ tokenizer.json + config) to disk
+    stats = compute_statistics(model)
+    save_statistics(stats, output_dir)
+
+    # Save final model (+ tokenizer.json + config)
     if not test_pipeline:
         try:
             login(token=getenv("HUGGINGFACE_TOKEN"))
             trainer.push_to_hub(output_dir=output_dir)
-        except ValueError as e:
+        except (ValueError, RuntimeError, OSError, FileNotFoundError) as e:
             warn(f"Unable to upload model due to, {e}. Trying to write to disk instead.", UserWarning)
             trainer.save_model(output_dir=output_dir)
         finally:
