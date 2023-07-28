@@ -1,6 +1,13 @@
 #!/bin/bash
 set -eo pipefail
 
+# We need to use the Git Large File System to save our model to Hugging Face hub
+# These are AWS-specific instructions
+sudo amazon-linux-extras install epel -y
+sudo yum-config-manager --enable epel
+sudo yum install git-lfs
+git lfs install
+
 # Clone the repo, and move into it
 git clone https://github.com/softmax1/EsperBERTo.git
 cd EsperBERTo
