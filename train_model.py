@@ -73,9 +73,10 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     training_args = TrainingArguments(
         output_dir=output_dir,
         num_train_epochs=1,
-        per_device_train_batch_size=64,
+        per_device_train_batch_size=128,
+        auto_find_batch_size=True,
         logging_strategy="steps",
-        logging_steps=500,
+        logging_steps=1000,
         logging_first_step=True,
         save_strategy="no",
     )
@@ -85,6 +86,7 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     # Start training
     trainer.train()
 
+    # Compute kurtosis and other stats
     stats = compute_statistics(model)
     save_statistics(stats, output_dir)
 
@@ -93,6 +95,7 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
         try:
             login(token=getenv("HUGGINGFACE_TOKEN"))
             trainer.push_to_hub()
+            trainer.tokenizer.push_to_hub(output_dir)
         except (ValueError, RuntimeError, OSError, FileNotFoundError, TypeError) as e:  # I've seen it all XD
             warn(f"Unable to upload model due to, {e}. Trying to write to disk instead.", UserWarning)
             trainer.save_model()
