@@ -47,10 +47,8 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
 
     # Load the raw dataset
     data_dir = Path.cwd() / "data"
-    if test_pipeline:
-        dataset = load_dataset(path=str(data_dir), split='train[:2]')
-    else:
-        dataset = load_dataset(path=str(data_dir), split='train')
+    split = 'train[:2]' if test_pipeline else 'train'
+    dataset = load_dataset(path=str(data_dir), split=split)
 
     # We'll build our dataset by applying our tokenizer.json to our text file.
     def process_data(examples):
@@ -81,7 +79,13 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
         save_strategy="no",
     )
 
-    trainer = Trainer(model=model, args=training_args, data_collator=data_collator, train_dataset=tokenized_dataset)
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        tokenizer=tokenizer,
+        data_collator=data_collator,
+        train_dataset=tokenized_dataset
+    )
 
     # Start training
     trainer.train()
@@ -95,7 +99,6 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
         try:
             login(token=getenv("HUGGINGFACE_TOKEN"))
             trainer.push_to_hub()
-            trainer.tokenizer.push_to_hub(output_dir)
         except (ValueError, RuntimeError, OSError, FileNotFoundError, TypeError) as e:  # I've seen it all XD
             warn(f"Unable to upload model due to, {e}. Trying to write to disk instead.", UserWarning)
             trainer.save_model()
