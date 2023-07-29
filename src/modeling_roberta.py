@@ -43,7 +43,7 @@ from transformers.utils import (
 )
 from transformers.models.roberta.configuration_roberta import RobertaConfig
 
-from src.activation import softmax_1
+from src.functional import softmax_1
 
 logger = logging.get_logger(__name__)
 
