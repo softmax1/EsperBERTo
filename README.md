@@ -18,8 +18,9 @@ echo "HUGGINGFACE_TOKEN=<mySecretTokenVariable>" > .env
 echo "HUGGINGFACE_USER=<myHFUserName>" >> .env
 ```
 To test before running in earnest, add the test_pipeline flag, e.g. `python train_model.py --test_pipeline`.
+To run the unit tests do `pytest tests`.
 
 
 ## Output
-The dataset is available on Hugging Face at [chriswmurphy/esperberto](https://huggingface.co/datasets/chriswmurphy/esperberto).
-The models will also be available on Hugging Face at [chriswmurphy/esperberto-softmax0](https://huggingface.co/chriswmurphy/esperberto-softmax0) and [chriswmurphy/esperberto-softmax1](https://huggingface.co/chriswmurphy/esperberto-softmax1).
+The dataset is available on Hugging Face at [chriswmurphy/esperanto](https://huggingface.co/datasets/chriswmurphy/esperanto).
+The models are also available on Hugging Face at [chriswmurphy/esperberto-softmax0](https://huggingface.co/chriswmurphy/esperberto-softmax0) and [chriswmurphy/esperberto-softmax1](https://huggingface.co/chriswmurphy/esperberto-softmax1).
