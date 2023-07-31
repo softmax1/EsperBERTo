@@ -1,744 +1,764 @@
 {
-    "roberta.embeddings.word_embeddings.weight": {
-        "mean": 0.0014582050498574972,
-        "var": 0.0007570313173346221,
-        "std": 0.027514202520251274,
-        "skews": -0.043800532817840576,
-        "kurtosis": 0.1539931297302246
-    },
-    "roberta.embeddings.position_embeddings.weight": {
-        "mean": -3.158746494591469e-06,
-        "var": 0.0003281543031334877,
-        "std": 0.018115030601620674,
-        "skews": -0.016791943460702896,
-        "kurtosis": 0.05753040313720703
-    },
-    "roberta.embeddings.token_type_embeddings.weight": {
-        "mean": -0.000692857604008168,
-        "var": 5.492410491569899e-05,
-        "std": 0.0074110799469053745,
-        "skews": -0.009797409176826477,
-        "kurtosis": 0.024173736572265625
-    },
-    "roberta.embeddings.LayerNorm.weight": {
-        "mean": 1.0086350440979004,
-        "var": 0.000521199544891715,
-        "std": 0.022829795256257057,
-        "skews": -2.0381059646606445,
-        "kurtosis": 5.154067039489746
-    },
-    "roberta.embeddings.LayerNorm.bias": {
-        "mean": 0.0017605663742870092,
-        "var": 0.00021506210032384843,
-        "std": 0.014664995484054089,
-        "skews": 0.07008469104766846,
-        "kurtosis": 0.07602262496948242
-    },
-    "roberta.encoder.layer.0.attention.self.query.weight": {
-        "mean": -6.398217374226078e-05,
-        "var": 0.0005129709024913609,
-        "std": 0.02264886163175106,
-        "skews": -0.004806841257959604,
-        "kurtosis": 0.16222429275512695
-    },
-    "roberta.encoder.layer.0.attention.self.query.bias": {
-        "mean": 0.00028412166284397244,
-        "var": 0.0001707846240606159,
-        "std": 0.013068458996713161,
-        "skews": -0.049317698925733566,
-        "kurtosis": 0.08218836784362793
-    },
-    "roberta.encoder.layer.0.attention.self.key.weight": {
-        "mean": -7.649142389709596e-06,
-        "var": 0.000499051297083497,
-        "std": 0.022339455783367157,
-        "skews": 0.0014625611947849393,
-        "kurtosis": 0.1026759147644043
-    },
-    "roberta.encoder.layer.0.attention.self.key.bias": {
-        "mean": -0.00045540276914834976,
-        "var": 0.004864254035055637,
-        "std": 0.06974420696496964,
-        "skews": 0.010268877260386944,
-        "kurtosis": -0.7428977489471436
-    },
-    "roberta.encoder.layer.0.attention.self.value.weight": {
-        "mean": -1.853510912042111e-05,
-        "var": 0.00045581208541989326,
-        "std": 0.02134975604712963,
-        "skews": -0.004823408089578152,
-        "kurtosis": 0.021597623825073242
-    },
-    "roberta.encoder.layer.0.attention.self.value.bias": {
-        "mean": -7.515632023569196e-05,
-        "var": 9.88065676210681e-06,
-        "std": 0.0031433512922376394,
-        "skews": -0.22893522679805756,
-        "kurtosis": 2.983104705810547
-    },
-    "roberta.encoder.layer.0.attention.output.dense.weight": {
-        "mean": -4.868377072853036e-05,
-        "var": 0.00045071454951539636,
-        "std": 0.02123003825545311,
-        "skews": 0.0014449225272983313,
-        "kurtosis": 0.009755373001098633
-    },
-    "roberta.encoder.layer.0.attention.output.dense.bias": {
-        "mean": -0.000258756335824728,
-        "var": 1.4665342860098463e-05,
-        "std": 0.003829535562545061,
-        "skews": -0.49611371755599976,
-        "kurtosis": 1.0711779594421387
-    },
-    "roberta.encoder.layer.0.attention.output.LayerNorm.weight": {
-        "mean": 0.9976574182510376,
-        "var": 0.0004882807261310518,
-        "std": 0.02209707535803318,
-        "skews": -2.39491605758667,
-        "kurtosis": 6.629180908203125
-    },
-    "roberta.encoder.layer.0.attention.output.LayerNorm.bias": {
-        "mean": -0.0004678515251725912,
-        "var": 3.058202491956763e-05,
-        "std": 0.005530101712793112,
-        "skews": -0.5440654754638672,
-        "kurtosis": 0.7274894714355469
-    },
-    "roberta.encoder.layer.0.intermediate.dense.weight": {
-        "mean": 1.5681287550251e-05,
-        "var": 0.00043905459460802376,
-        "std": 0.020953629165887833,
-        "skews": 0.006710077170282602,
-        "kurtosis": 0.004416704177856445
-    },
-    "roberta.encoder.layer.0.intermediate.dense.bias": {
-        "mean": -0.007763049565255642,
-        "var": 1.1209915101062506e-05,
-        "std": 0.0033481211867183447,
-        "skews": -0.26828742027282715,
-        "kurtosis": 0.5972011089324951
-    },
-    "roberta.encoder.layer.0.output.dense.weight": {
-        "mean": -1.2304984920774586e-05,
-        "var": 0.00043919673771597445,
-        "std": 0.020957021042704582,
-        "skews": -0.002241319976747036,
-        "kurtosis": 0.004519224166870117
-    },
-    "roberta.encoder.layer.0.output.dense.bias": {
-        "mean": 9.849032721831463e-06,
-        "var": 5.513245469046524e-06,
-        "std": 0.0023480302188545465,
-        "skews": -0.14423881471157074,
-        "kurtosis": 0.15635347366333008
-    },
-    "roberta.encoder.layer.0.output.LayerNorm.weight": {
-        "mean": 1.0225226879119873,
-        "var": 0.0003257888602092862,
-        "std": 0.01804962195456028,
-        "skews": -1.7851378917694092,
-        "kurtosis": 3.941689968109131
-    },
-    "roberta.encoder.layer.0.output.LayerNorm.bias": {
-        "mean": -2.760335337370634e-05,
-        "var": 2.8326501706033014e-05,
-        "std": 0.0053222645074129105,
-        "skews": -0.23658382892608643,
-        "kurtosis": 0.3760261535644531
-    },
-    "roberta.encoder.layer.1.attention.self.query.weight": {
-        "mean": -4.35790752817411e-05,
-        "var": 0.0005551113281399012,
-        "std": 0.02356080152094364,
-        "skews": -0.0008172777597792447,
-        "kurtosis": 0.12834858894348145
-    },
-    "roberta.encoder.layer.1.attention.self.query.bias": {
-        "mean": 0.00021080274018459022,
-        "var": 0.00027707155095413327,
-        "std": 0.016645466908812523,
-        "skews": -0.07176811248064041,
-        "kurtosis": -0.5016062259674072
-    },
-    "roberta.encoder.layer.1.attention.self.key.weight": {
-        "mean": -4.0257314140035305e-06,
-        "var": 0.0005334970192052424,
-        "std": 0.023097554221749306,
-        "skews": 0.0013544269604608417,
-        "kurtosis": 0.06350922584533691
-    },
-    "roberta.encoder.layer.1.attention.self.key.bias": {
-        "mean": -0.0020947400480508804,
-        "var": 0.003951939754188061,
-        "std": 0.06286445260047913,
-        "skews": 0.07124367356300354,
-        "kurtosis": -0.5832855701446533
-    },
-    "roberta.encoder.layer.1.attention.self.value.weight": {
-        "mean": 2.3801445422577672e-05,
-        "var": 0.0004690516216214746,
-        "std": 0.02165759913623333,
-        "skews": 0.0042279805056750774,
-        "kurtosis": 0.03416252136230469
-    },
-    "roberta.encoder.layer.1.attention.self.value.bias": {
-        "mean": 0.0003454845573287457,
-        "var": 2.323553417227231e-05,
-        "std": 0.004820324946194887,
-        "skews": 1.1477802991867065,
-        "kurtosis": 7.668582916259766
-    },
-    "roberta.encoder.layer.1.attention.output.dense.weight": {
-        "mean": -1.1590325811994262e-05,
-        "var": 0.000474267901154235,
-        "std": 0.021777693182229996,
-        "skews": 0.004428294952958822,
-        "kurtosis": 0.026177406311035156
-    },
-    "roberta.encoder.layer.1.attention.output.dense.bias": {
-        "mean": 5.401819362305105e-05,
-        "var": 2.1541714886552654e-05,
-        "std": 0.004641305189579725,
-        "skews": 0.033018242567777634,
-        "kurtosis": 0.36162710189819336
-    },
-    "roberta.encoder.layer.1.attention.output.LayerNorm.weight": {
-        "mean": 0.998041033744812,
-        "var": 0.000322734093060717,
-        "std": 0.0179648008197546,
-        "skews": -2.1642069816589355,
-        "kurtosis": 5.4234819412231445
-    },
-    "roberta.encoder.layer.1.attention.output.LayerNorm.bias": {
-        "mean": -0.0001435635786037892,
-        "var": 3.250529698561877e-05,
-        "std": 0.005701341666281223,
-        "skews": -0.14342063665390015,
-        "kurtosis": 0.8806853294372559
-    },
-    "roberta.encoder.layer.1.intermediate.dense.weight": {
-        "mean": 3.356811475896393e-06,
-        "var": 0.0004361715691629797,
-        "std": 0.020884720608592033,
-        "skews": 0.005725279916077852,
-        "kurtosis": 0.0014674663543701172
-    },
-    "roberta.encoder.layer.1.intermediate.dense.bias": {
-        "mean": -0.009367515332996845,
-        "var": 2.4582162950537167e-05,
-        "std": 0.004958040080964565,
-        "skews": -0.13660196959972382,
-        "kurtosis": -0.04939389228820801
-    },
-    "roberta.encoder.layer.1.output.dense.weight": {
-        "mean": -5.798063739348436e-06,
-        "var": 0.00043681025272235274,
-        "std": 0.020900005474686623,
-        "skews": -0.0015532136894762516,
-        "kurtosis": 0.003038167953491211
-    },
-    "roberta.encoder.layer.1.output.dense.bias": {
-        "mean": -0.0001134517224272713,
-        "var": 5.178580977371894e-06,
-        "std": 0.002275649458169937,
-        "skews": 0.2503950893878937,
-        "kurtosis": 0.27855634689331055
-    },
-    "roberta.encoder.layer.1.output.LayerNorm.weight": {
-        "mean": 1.0052441358566284,
-        "var": 0.00013742243754677474,
-        "std": 0.011722731404006481,
-        "skews": -1.85138738155365,
-        "kurtosis": 4.264026641845703
-    },
-    "roberta.encoder.layer.1.output.LayerNorm.bias": {
-        "mean": 0.00017215182015206665,
-        "var": 2.289451367687434e-05,
-        "std": 0.004784821067005396,
-        "skews": 0.04913906008005142,
-        "kurtosis": 0.20005035400390625
-    },
-    "roberta.encoder.layer.2.attention.self.query.weight": {
-        "mean": 2.7166912332177162e-05,
-        "var": 0.0004932782612740993,
-        "std": 0.02220986783504486,
-        "skews": -0.0031982134096324444,
-        "kurtosis": 0.02706003189086914
-    },
-    "roberta.encoder.layer.2.attention.self.query.bias": {
-        "mean": 0.0003922747855540365,
-        "var": 0.00015845565940253437,
-        "std": 0.012587917037308216,
-        "skews": -0.054218851029872894,
-        "kurtosis": -0.04380059242248535
-    },
-    "roberta.encoder.layer.2.attention.self.key.weight": {
-        "mean": -2.018308987317141e-05,
-        "var": 0.0004903666558675468,
-        "std": 0.022144224494695663,
-        "skews": 0.0036732752341777086,
-        "kurtosis": 0.009158611297607422
-    },
-    "roberta.encoder.layer.2.attention.self.key.bias": {
-        "mean": -0.0031964965164661407,
-        "var": 0.0041986494325101376,
-        "std": 0.06479698419570923,
-        "skews": 0.02890917658805847,
-        "kurtosis": -0.5272133350372314
-    },
-    "roberta.encoder.layer.2.attention.self.value.weight": {
-        "mean": 2.3191323634819128e-05,
-        "var": 0.00044222702854312956,
-        "std": 0.021029194816946983,
-        "skews": -0.0043215155601501465,
-        "kurtosis": 0.014162778854370117
-    },
-    "roberta.encoder.layer.2.attention.self.value.bias": {
-        "mean": -0.00020431968732737005,
-        "var": 1.0524529898248147e-05,
-        "std": 0.0032441532239317894,
-        "skews": -0.027376186102628708,
-        "kurtosis": -0.059905290603637695
-    },
-    "roberta.encoder.layer.2.attention.output.dense.weight": {
-        "mean": -5.271604095469229e-05,
-        "var": 0.0004438565520104021,
-        "std": 0.021067902445793152,
-        "skews": 0.0026128601748496294,
-        "kurtosis": 0.005318880081176758
-    },
-    "roberta.encoder.layer.2.attention.output.dense.bias": {
-        "mean": -7.541957074863603e-06,
-        "var": 2.058518657577224e-05,
-        "std": 0.004537090193480253,
-        "skews": -0.06039562448859215,
-        "kurtosis": 0.24531984329223633
-    },
-    "roberta.encoder.layer.2.attention.output.LayerNorm.weight": {
-        "mean": 1.0000793933868408,
-        "var": 0.00012302643153816462,
-        "std": 0.011091727763414383,
-        "skews": -1.9482730627059937,
-        "kurtosis": 4.888921737670898
-    },
-    "roberta.encoder.layer.2.attention.output.LayerNorm.bias": {
-        "mean": -3.71923488273751e-05,
-        "var": 3.902014213963412e-05,
-        "std": 0.006246610544621944,
-        "skews": 0.01320443581789732,
-        "kurtosis": 0.33077311515808105
-    },
-    "roberta.encoder.layer.2.intermediate.dense.weight": {
-        "mean": 8.387058187508956e-06,
-        "var": 0.0004418727767188102,
-        "std": 0.02102077007293701,
-        "skews": 0.005556351039558649,
-        "kurtosis": 0.002329587936401367
-    },
-    "roberta.encoder.layer.2.intermediate.dense.bias": {
-        "mean": -0.009634435176849365,
-        "var": 2.793235398712568e-05,
-        "std": 0.005285106599330902,
-        "skews": -0.15970686078071594,
-        "kurtosis": -0.09573221206665039
-    },
-    "roberta.encoder.layer.2.output.dense.weight": {
-        "mean": 1.288542193833564e-06,
-        "var": 0.0004400797188282013,
-        "std": 0.02097807638347149,
-        "skews": -0.0006932176765985787,
-        "kurtosis": -0.001340627670288086
-    },
-    "roberta.encoder.layer.2.output.dense.bias": {
-        "mean": -1.412178244208917e-05,
-        "var": 6.704325642203912e-06,
-        "std": 0.0025892711710184813,
-        "skews": -0.010246580466628075,
-        "kurtosis": 0.02357172966003418
-    },
-    "roberta.encoder.layer.2.output.LayerNorm.weight": {
-        "mean": 1.001415729522705,
-        "var": 4.947700654156506e-05,
-        "std": 0.0070339892990887165,
-        "skews": -1.0769517421722412,
-        "kurtosis": 2.3169164657592773
-    },
-    "roberta.encoder.layer.2.output.LayerNorm.bias": {
-        "mean": 4.2172076064161956e-05,
-        "var": 2.4678256522747688e-05,
-        "std": 0.0049677216447889805,
-        "skews": 0.06815317273139954,
-        "kurtosis": -0.046553850173950195
-    },
-    "roberta.encoder.layer.3.attention.self.query.weight": {
-        "mean": -4.090392394573428e-05,
-        "var": 0.00046766569721512496,
-        "std": 0.02162558026611805,
-        "skews": -0.0014705877983942628,
-        "kurtosis": -0.00661468505859375
-    },
-    "roberta.encoder.layer.3.attention.self.query.bias": {
-        "mean": 8.51980148581788e-05,
-        "var": 9.460485307499766e-05,
-        "std": 0.009726502932608128,
-        "skews": 0.014160580933094025,
-        "kurtosis": -0.31264686584472656
-    },
-    "roberta.encoder.layer.3.attention.self.key.weight": {
-        "mean": -4.7693367378087714e-05,
-        "var": 0.00046737160300835967,
-        "std": 0.021618779748678207,
-        "skews": -0.0012577144661918283,
-        "kurtosis": -0.0005905628204345703
-    },
-    "roberta.encoder.layer.3.attention.self.key.bias": {
-        "mean": 0.003086585085839033,
-        "var": 0.005872996058315039,
-        "std": 0.07663547247648239,
-        "skews": 0.0052658384665846825,
-        "kurtosis": -0.6769688129425049
-    },
-    "roberta.encoder.layer.3.attention.self.value.weight": {
-        "mean": 1.7175902030430734e-05,
-        "var": 0.00042318154009990394,
-        "std": 0.020571377128362656,
-        "skews": -0.00043173765880055726,
-        "kurtosis": -0.006289243698120117
-    },
-    "roberta.encoder.layer.3.attention.self.value.bias": {
-        "mean": 4.587553848978132e-05,
-        "var": 9.208594747178722e-06,
-        "std": 0.0030345667619258165,
-        "skews": -0.0037155449390411377,
-        "kurtosis": 0.029775619506835938
-    },
-    "roberta.encoder.layer.3.attention.output.dense.weight": {
-        "mean": 5.2686019103020953e-08,
-        "var": 0.00042321780347265303,
-        "std": 0.020572258159518242,
-        "skews": -0.002128210384398699,
-        "kurtosis": 0.011586189270019531
-    },
-    "roberta.encoder.layer.3.attention.output.dense.bias": {
-        "mean": 5.4264432947093155e-06,
-        "var": 2.496104389138054e-05,
-        "std": 0.004996102768927813,
-        "skews": 0.024337410926818848,
-        "kurtosis": 0.5586535930633545
-    },
-    "roberta.encoder.layer.3.attention.output.LayerNorm.weight": {
-        "mean": 1.001712679862976,
-        "var": 4.304439062252641e-05,
-        "std": 0.006560822483152151,
-        "skews": -1.0286214351654053,
-        "kurtosis": 2.2424263954162598
-    },
-    "roberta.encoder.layer.3.attention.output.LayerNorm.bias": {
-        "mean": 1.680224340816494e-05,
-        "var": 5.4459866078104824e-05,
-        "std": 0.007379692979156971,
-        "skews": 0.02170250378549099,
-        "kurtosis": 0.7777061462402344
-    },
-    "roberta.encoder.layer.3.intermediate.dense.weight": {
-        "mean": 3.5257264698884683e-06,
-        "var": 0.00044692339724861085,
-        "std": 0.021140562370419502,
-        "skews": 0.004344319459050894,
-        "kurtosis": 0.0036835670471191406
-    },
-    "roberta.encoder.layer.3.intermediate.dense.bias": {
-        "mean": -0.00914069265127182,
-        "var": 2.586978916951921e-05,
-        "std": 0.005086235236376524,
-        "skews": -0.162030428647995,
-        "kurtosis": 0.010679960250854492
-    },
-    "roberta.encoder.layer.3.output.dense.weight": {
-        "mean": -6.022597176524869e-07,
-        "var": 0.0004414769064169377,
-        "std": 0.0210113525390625,
-        "skews": 0.0012369839241728187,
-        "kurtosis": 0.007577419281005859
-    },
-    "roberta.encoder.layer.3.output.dense.bias": {
-        "mean": 3.719493906828575e-05,
-        "var": 1.1058556083298754e-05,
-        "std": 0.003325440688058734,
-        "skews": -0.1612115502357483,
-        "kurtosis": -0.026562213897705078
-    },
-    "roberta.encoder.layer.3.output.LayerNorm.weight": {
-        "mean": 1.001402735710144,
-        "var": 2.4486411348334514e-05,
-        "std": 0.004948374815285206,
-        "skews": -0.23433759808540344,
-        "kurtosis": 0.6789224147796631
-    },
-    "roberta.encoder.layer.3.output.LayerNorm.bias": {
-        "mean": -4.271932630217634e-05,
-        "var": 3.961387847084552e-05,
-        "std": 0.006293955724686384,
-        "skews": -0.03635729104280472,
-        "kurtosis": -0.09168672561645508
-    },
-    "roberta.encoder.layer.4.attention.self.query.weight": {
-        "mean": 2.0863762983935885e-05,
-        "var": 0.0004690568894147873,
-        "std": 0.02165772207081318,
-        "skews": 0.001370094483718276,
-        "kurtosis": -0.0005536079406738281
-    },
-    "roberta.encoder.layer.4.attention.self.query.bias": {
-        "mean": -5.503653665073216e-05,
-        "var": 5.567464904743247e-05,
-        "std": 0.007461544591933489,
-        "skews": -0.09035860747098923,
-        "kurtosis": -0.42938733100891113
-    },
-    "roberta.encoder.layer.4.attention.self.key.weight": {
-        "mean": -2.6013600290752947e-05,
-        "var": 0.00046893939725123346,
-        "std": 0.02165500819683075,
-        "skews": 0.0019553564488887787,
-        "kurtosis": 0.004819154739379883
-    },
-    "roberta.encoder.layer.4.attention.self.key.bias": {
-        "mean": 0.0018858504481613636,
-        "var": 0.007203991990536451,
-        "std": 0.08487633615732193,
-        "skews": -0.05181723088026047,
-        "kurtosis": -0.5182955265045166
-    },
-    "roberta.encoder.layer.4.attention.self.value.weight": {
-        "mean": 3.4278393286513165e-05,
-        "var": 0.00042073873919434845,
-        "std": 0.020511917769908905,
-        "skews": 0.005348401144146919,
-        "kurtosis": 0.0131378173828125
-    },
-    "roberta.encoder.layer.4.attention.self.value.bias": {
-        "mean": -8.499067917000502e-05,
-        "var": 6.5524063757038675e-06,
-        "std": 0.002559766871854663,
-        "skews": 0.09262602031230927,
-        "kurtosis": 0.040167808532714844
-    },
-    "roberta.encoder.layer.4.attention.output.dense.weight": {
-        "mean": -3.3162916224682704e-05,
-        "var": 0.0004213651700410992,
-        "std": 0.020527182146906853,
-        "skews": 0.004757349845021963,
-        "kurtosis": 0.0020151138305664062
-    },
-    "roberta.encoder.layer.4.attention.output.dense.bias": {
-        "mean": 0.00010622192348819226,
-        "var": 3.061251118197106e-05,
-        "std": 0.005532857496291399,
-        "skews": 0.09102734178304672,
-        "kurtosis": 0.1488513946533203
-    },
-    "roberta.encoder.layer.4.attention.output.LayerNorm.weight": {
-        "mean": 1.0036873817443848,
-        "var": 2.402456448180601e-05,
-        "std": 0.004901485983282328,
-        "skews": -0.17311879992485046,
-        "kurtosis": 0.7263455390930176
-    },
-    "roberta.encoder.layer.4.attention.output.LayerNorm.bias": {
-        "mean": -3.894742621923797e-05,
-        "var": 0.00010962331725750118,
-        "std": 0.010470115579664707,
-        "skews": 0.015637706965208054,
-        "kurtosis": 0.0650935173034668
-    },
-    "roberta.encoder.layer.4.intermediate.dense.weight": {
-        "mean": 1.9001166947418824e-05,
-        "var": 0.00045076964306645095,
-        "std": 0.021231336519122124,
-        "skews": 0.0026944426354020834,
-        "kurtosis": 0.0022954940795898438
-    },
-    "roberta.encoder.layer.4.intermediate.dense.bias": {
-        "mean": -0.007165838032960892,
-        "var": 2.477175439707935e-05,
-        "std": 0.004977122880518436,
-        "skews": 0.04868491739034653,
-        "kurtosis": -0.0690462589263916
-    },
-    "roberta.encoder.layer.4.output.dense.weight": {
-        "mean": -1.4121118510956876e-05,
-        "var": 0.0004394958959892392,
-        "std": 0.020964156836271286,
-        "skews": -0.0006596668972633779,
-        "kurtosis": -0.0009326934814453125
-    },
-    "roberta.encoder.layer.4.output.dense.bias": {
-        "mean": -1.4505638318951242e-05,
-        "var": 3.1701049010735005e-05,
-        "std": 0.0056303683668375015,
-        "skews": 0.01789228431880474,
-        "kurtosis": 0.025606155395507812
-    },
-    "roberta.encoder.layer.4.output.LayerNorm.weight": {
-        "mean": 1.0013538599014282,
-        "var": 2.1983292754157446e-05,
-        "std": 0.004688634537160397,
-        "skews": -0.12417194247245789,
-        "kurtosis": -0.19722652435302734
-    },
-    "roberta.encoder.layer.4.output.LayerNorm.bias": {
-        "mean": -2.6330139917263296e-06,
-        "var": 0.00011221171007491648,
-        "std": 0.010593002662062645,
-        "skews": 0.027125906199216843,
-        "kurtosis": -0.19787263870239258
-    },
-    "roberta.encoder.layer.5.attention.self.query.weight": {
-        "mean": -5.532274371944368e-08,
-        "var": 0.0004721443692687899,
-        "std": 0.0217288825660944,
-        "skews": 0.00020039484661538154,
-        "kurtosis": 0.015891313552856445
-    },
-    "roberta.encoder.layer.5.attention.self.query.bias": {
-        "mean": -8.160710422089323e-05,
-        "var": 7.523629756178707e-05,
-        "std": 0.008673885837197304,
-        "skews": -0.03690963611006737,
-        "kurtosis": -0.17303133010864258
-    },
-    "roberta.encoder.layer.5.attention.self.key.weight": {
-        "mean": -4.25052858190611e-05,
-        "var": 0.0004726680344901979,
-        "std": 0.021740930154919624,
-        "skews": -0.002768050180748105,
-        "kurtosis": 0.004945993423461914
-    },
-    "roberta.encoder.layer.5.attention.self.key.bias": {
-        "mean": 0.000878833350725472,
-        "var": 0.00573193933814764,
-        "std": 0.07570957392454147,
-        "skews": -0.022919252514839172,
-        "kurtosis": -0.263958215713501
-    },
-    "roberta.encoder.layer.5.attention.self.value.weight": {
-        "mean": -2.055423829006031e-05,
-        "var": 0.0004407960514072329,
-        "std": 0.020995143800973892,
-        "skews": -0.0037400913424789906,
-        "kurtosis": 0.013627052307128906
-    },
-    "roberta.encoder.layer.5.attention.self.value.bias": {
-        "mean": -7.397535227937624e-05,
-        "var": 4.758755494549405e-06,
-        "std": 0.002181457122787833,
-        "skews": 0.08433835208415985,
-        "kurtosis": -0.016766786575317383
-    },
-    "roberta.encoder.layer.5.attention.output.dense.weight": {
-        "mean": -1.2045622497680597e-05,
-        "var": 0.0004366167413536459,
-        "std": 0.020895376801490784,
-        "skews": 0.0029496452771127224,
-        "kurtosis": 0.008470535278320312
-    },
-    "roberta.encoder.layer.5.attention.output.dense.bias": {
-        "mean": 8.662251639179885e-05,
-        "var": 3.9924398151924834e-05,
-        "std": 0.006318575702607632,
-        "skews": 0.056425854563713074,
-        "kurtosis": -0.30121421813964844
-    },
-    "roberta.encoder.layer.5.attention.output.LayerNorm.weight": {
-        "mean": 1.0052305459976196,
-        "var": 2.6932762921205722e-05,
-        "std": 0.005189678631722927,
-        "skews": -0.0008771444554440677,
-        "kurtosis": -0.46051597595214844
-    },
-    "roberta.encoder.layer.5.attention.output.LayerNorm.bias": {
-        "mean": 8.962022548075765e-05,
-        "var": 0.0001882835931610316,
-        "std": 0.0137216467410326,
-        "skews": 0.046649038791656494,
-        "kurtosis": -0.4486846923828125
-    },
-    "roberta.encoder.layer.5.intermediate.dense.weight": {
-        "mean": -3.0786557090323186e-06,
-        "var": 0.00045341672375798225,
-        "std": 0.021293584257364273,
-        "skews": 0.0010286197066307068,
-        "kurtosis": 0.011502504348754883
-    },
-    "roberta.encoder.layer.5.intermediate.dense.bias": {
-        "mean": -0.005148021969944239,
-        "var": 1.7019634469761513e-05,
-        "std": 0.0041254861280322075,
-        "skews": -0.07188977301120758,
-        "kurtosis": 0.17030692100524902
-    },
-    "roberta.encoder.layer.5.output.dense.weight": {
-        "mean": -1.4178122000885196e-05,
-        "var": 0.00043677978101186454,
-        "std": 0.020899277180433273,
-        "skews": 0.0002216433931607753,
-        "kurtosis": 0.002239704132080078
-    },
-    "roberta.encoder.layer.5.output.dense.bias": {
-        "mean": -1.8580063624540344e-05,
-        "var": 6.884078902658075e-05,
-        "std": 0.008297034539282322,
-        "skews": -0.01831641048192978,
-        "kurtosis": -0.5281667709350586
-    },
-    "roberta.encoder.layer.5.output.LayerNorm.weight": {
-        "mean": 0.9948756694793701,
-        "var": 3.1040297471918166e-05,
-        "std": 0.005571382120251656,
-        "skews": 0.050558920949697495,
-        "kurtosis": -0.2686913013458252
-    },
-    "roberta.encoder.layer.5.output.LayerNorm.bias": {
-        "mean": -0.0007708113407716155,
-        "var": 0.00015204621013253927,
-        "std": 0.01233070157468319,
-        "skews": 0.03216458484530449,
-        "kurtosis": -0.5923676490783691
-    },
-    "lm_head.bias": {
-        "mean": -0.10473798960447311,
-        "var": 0.017958510667085648,
-        "std": 0.13400936126708984,
-        "skews": -3.461611032485962,
-        "kurtosis": 15.571043014526367
-    },
-    "lm_head.dense.weight": {
-        "mean": -5.753549703513272e-05,
-        "var": 0.0004549279110506177,
-        "std": 0.021329039707779884,
-        "skews": 0.12207791954278946,
-        "kurtosis": 0.6796162128448486
-    },
-    "lm_head.dense.bias": {
-        "mean": 0.004165387246757746,
-        "var": 0.0001435967569705099,
-        "std": 0.01198318600654602,
-        "skews": -3.1123368740081787,
-        "kurtosis": 11.137622833251953
-    },
-    "lm_head.layer_norm.weight": {
-        "mean": 1.3379936218261719,
-        "var": 0.009413029067218304,
-        "std": 0.09702076762914658,
-        "skews": -2.1479222774505615,
-        "kurtosis": 4.95880126953125
-    },
-    "lm_head.layer_norm.bias": {
-        "mean": 0.006280971225351095,
-        "var": 0.0013993699103593826,
-        "std": 0.03740815445780754,
-        "skews": 0.11788497865200043,
-        "kurtosis": -1.3045988082885742
+    "layer_statistics": {
+        "roberta.embeddings.word_embeddings.weight": {
+            "mean": 0.0014582050498574972,
+            "var": 0.0007570313173346221,
+            "std": 0.027514202520251274,
+            "skews": -0.043800532817840576,
+            "kurtosis": 0.1539931297302246
+        },
+        "roberta.embeddings.position_embeddings.weight": {
+            "mean": -3.158746494591469e-06,
+            "var": 0.0003281543031334877,
+            "std": 0.018115030601620674,
+            "skews": -0.016791943460702896,
+            "kurtosis": 0.05753040313720703
+        },
+        "roberta.embeddings.token_type_embeddings.weight": {
+            "mean": -0.000692857604008168,
+            "var": 5.492410491569899e-05,
+            "std": 0.0074110799469053745,
+            "skews": -0.009797409176826477,
+            "kurtosis": 0.024173736572265625
+        },
+        "roberta.embeddings.LayerNorm.weight": {
+            "mean": 1.0086350440979004,
+            "var": 0.000521199544891715,
+            "std": 0.022829795256257057,
+            "skews": -2.0381059646606445,
+            "kurtosis": 5.154067039489746
+        },
+        "roberta.embeddings.LayerNorm.bias": {
+            "mean": 0.0017605663742870092,
+            "var": 0.00021506210032384843,
+            "std": 0.014664995484054089,
+            "skews": 0.07008469104766846,
+            "kurtosis": 0.07602262496948242
+        },
+        "roberta.encoder.layer.0.attention.self.query.weight": {
+            "mean": -6.398217374226078e-05,
+            "var": 0.0005129709024913609,
+            "std": 0.02264886163175106,
+            "skews": -0.004806841257959604,
+            "kurtosis": 0.16222429275512695
+        },
+        "roberta.encoder.layer.0.attention.self.query.bias": {
+            "mean": 0.00028412166284397244,
+            "var": 0.0001707846240606159,
+            "std": 0.013068458996713161,
+            "skews": -0.049317698925733566,
+            "kurtosis": 0.08218836784362793
+        },
+        "roberta.encoder.layer.0.attention.self.key.weight": {
+            "mean": -7.649142389709596e-06,
+            "var": 0.000499051297083497,
+            "std": 0.022339455783367157,
+            "skews": 0.0014625611947849393,
+            "kurtosis": 0.1026759147644043
+        },
+        "roberta.encoder.layer.0.attention.self.key.bias": {
+            "mean": -0.00045540276914834976,
+            "var": 0.004864254035055637,
+            "std": 0.06974420696496964,
+            "skews": 0.010268877260386944,
+            "kurtosis": -0.7428977489471436
+        },
+        "roberta.encoder.layer.0.attention.self.value.weight": {
+            "mean": -1.853510912042111e-05,
+            "var": 0.00045581208541989326,
+            "std": 0.02134975604712963,
+            "skews": -0.004823408089578152,
+            "kurtosis": 0.021597623825073242
+        },
+        "roberta.encoder.layer.0.attention.self.value.bias": {
+            "mean": -7.515632023569196e-05,
+            "var": 9.88065676210681e-06,
+            "std": 0.0031433512922376394,
+            "skews": -0.22893522679805756,
+            "kurtosis": 2.983104705810547
+        },
+        "roberta.encoder.layer.0.attention.output.dense.weight": {
+            "mean": -4.868377072853036e-05,
+            "var": 0.00045071454951539636,
+            "std": 0.02123003825545311,
+            "skews": 0.0014449225272983313,
+            "kurtosis": 0.009755373001098633
+        },
+        "roberta.encoder.layer.0.attention.output.dense.bias": {
+            "mean": -0.000258756335824728,
+            "var": 1.4665342860098463e-05,
+            "std": 0.003829535562545061,
+            "skews": -0.49611371755599976,
+            "kurtosis": 1.0711779594421387
+        },
+        "roberta.encoder.layer.0.attention.output.LayerNorm.weight": {
+            "mean": 0.9976574182510376,
+            "var": 0.0004882807261310518,
+            "std": 0.02209707535803318,
+            "skews": -2.39491605758667,
+            "kurtosis": 6.629180908203125
+        },
+        "roberta.encoder.layer.0.attention.output.LayerNorm.bias": {
+            "mean": -0.0004678515251725912,
+            "var": 3.058202491956763e-05,
+            "std": 0.005530101712793112,
+            "skews": -0.5440654754638672,
+            "kurtosis": 0.7274894714355469
+        },
+        "roberta.encoder.layer.0.intermediate.dense.weight": {
+            "mean": 1.5681287550251e-05,
+            "var": 0.00043905459460802376,
+            "std": 0.020953629165887833,
+            "skews": 0.006710077170282602,
+            "kurtosis": 0.004416704177856445
+        },
+        "roberta.encoder.layer.0.intermediate.dense.bias": {
+            "mean": -0.007763049565255642,
+            "var": 1.1209915101062506e-05,
+            "std": 0.0033481211867183447,
+            "skews": -0.26828742027282715,
+            "kurtosis": 0.5972011089324951
+        },
+        "roberta.encoder.layer.0.output.dense.weight": {
+            "mean": -1.2304984920774586e-05,
+            "var": 0.00043919673771597445,
+            "std": 0.020957021042704582,
+            "skews": -0.002241319976747036,
+            "kurtosis": 0.004519224166870117
+        },
+        "roberta.encoder.layer.0.output.dense.bias": {
+            "mean": 9.849032721831463e-06,
+            "var": 5.513245469046524e-06,
+            "std": 0.0023480302188545465,
+            "skews": -0.14423881471157074,
+            "kurtosis": 0.15635347366333008
+        },
+        "roberta.encoder.layer.0.output.LayerNorm.weight": {
+            "mean": 1.0225226879119873,
+            "var": 0.0003257888602092862,
+            "std": 0.01804962195456028,
+            "skews": -1.7851378917694092,
+            "kurtosis": 3.941689968109131
+        },
+        "roberta.encoder.layer.0.output.LayerNorm.bias": {
+            "mean": -2.760335337370634e-05,
+            "var": 2.8326501706033014e-05,
+            "std": 0.0053222645074129105,
+            "skews": -0.23658382892608643,
+            "kurtosis": 0.3760261535644531
+        },
+        "roberta.encoder.layer.1.attention.self.query.weight": {
+            "mean": -4.35790752817411e-05,
+            "var": 0.0005551113281399012,
+            "std": 0.02356080152094364,
+            "skews": -0.0008172777597792447,
+            "kurtosis": 0.12834858894348145
+        },
+        "roberta.encoder.layer.1.attention.self.query.bias": {
+            "mean": 0.00021080274018459022,
+            "var": 0.00027707155095413327,
+            "std": 0.016645466908812523,
+            "skews": -0.07176811248064041,
+            "kurtosis": -0.5016062259674072
+        },
+        "roberta.encoder.layer.1.attention.self.key.weight": {
+            "mean": -4.0257314140035305e-06,
+            "var": 0.0005334970192052424,
+            "std": 0.023097554221749306,
+            "skews": 0.0013544269604608417,
+            "kurtosis": 0.06350922584533691
+        },
+        "roberta.encoder.layer.1.attention.self.key.bias": {
+            "mean": -0.0020947400480508804,
+            "var": 0.003951939754188061,
+            "std": 0.06286445260047913,
+            "skews": 0.07124367356300354,
+            "kurtosis": -0.5832855701446533
+        },
+        "roberta.encoder.layer.1.attention.self.value.weight": {
+            "mean": 2.3801445422577672e-05,
+            "var": 0.0004690516216214746,
+            "std": 0.02165759913623333,
+            "skews": 0.0042279805056750774,
+            "kurtosis": 0.03416252136230469
+        },
+        "roberta.encoder.layer.1.attention.self.value.bias": {
+            "mean": 0.0003454845573287457,
+            "var": 2.323553417227231e-05,
+            "std": 0.004820324946194887,
+            "skews": 1.1477802991867065,
+            "kurtosis": 7.668582916259766
+        },
+        "roberta.encoder.layer.1.attention.output.dense.weight": {
+            "mean": -1.1590325811994262e-05,
+            "var": 0.000474267901154235,
+            "std": 0.021777693182229996,
+            "skews": 0.004428294952958822,
+            "kurtosis": 0.026177406311035156
+        },
+        "roberta.encoder.layer.1.attention.output.dense.bias": {
+            "mean": 5.401819362305105e-05,
+            "var": 2.1541714886552654e-05,
+            "std": 0.004641305189579725,
+            "skews": 0.033018242567777634,
+            "kurtosis": 0.36162710189819336
+        },
+        "roberta.encoder.layer.1.attention.output.LayerNorm.weight": {
+            "mean": 0.998041033744812,
+            "var": 0.000322734093060717,
+            "std": 0.0179648008197546,
+            "skews": -2.1642069816589355,
+            "kurtosis": 5.4234819412231445
+        },
+        "roberta.encoder.layer.1.attention.output.LayerNorm.bias": {
+            "mean": -0.0001435635786037892,
+            "var": 3.250529698561877e-05,
+            "std": 0.005701341666281223,
+            "skews": -0.14342063665390015,
+            "kurtosis": 0.8806853294372559
+        },
+        "roberta.encoder.layer.1.intermediate.dense.weight": {
+            "mean": 3.356811475896393e-06,
+            "var": 0.0004361715691629797,
+            "std": 0.020884720608592033,
+            "skews": 0.005725279916077852,
+            "kurtosis": 0.0014674663543701172
+        },
+        "roberta.encoder.layer.1.intermediate.dense.bias": {
+            "mean": -0.009367515332996845,
+            "var": 2.4582162950537167e-05,
+            "std": 0.004958040080964565,
+            "skews": -0.13660196959972382,
+            "kurtosis": -0.04939389228820801
+        },
+        "roberta.encoder.layer.1.output.dense.weight": {
+            "mean": -5.798063739348436e-06,
+            "var": 0.00043681025272235274,
+            "std": 0.020900005474686623,
+            "skews": -0.0015532136894762516,
+            "kurtosis": 0.003038167953491211
+        },
+        "roberta.encoder.layer.1.output.dense.bias": {
+            "mean": -0.0001134517224272713,
+            "var": 5.178580977371894e-06,
+            "std": 0.002275649458169937,
+            "skews": 0.2503950893878937,
+            "kurtosis": 0.27855634689331055
+        },
+        "roberta.encoder.layer.1.output.LayerNorm.weight": {
+            "mean": 1.0052441358566284,
+            "var": 0.00013742243754677474,
+            "std": 0.011722731404006481,
+            "skews": -1.85138738155365,
+            "kurtosis": 4.264026641845703
+        },
+        "roberta.encoder.layer.1.output.LayerNorm.bias": {
+            "mean": 0.00017215182015206665,
+            "var": 2.289451367687434e-05,
+            "std": 0.004784821067005396,
+            "skews": 0.04913906008005142,
+            "kurtosis": 0.20005035400390625
+        },
+        "roberta.encoder.layer.2.attention.self.query.weight": {
+            "mean": 2.7166912332177162e-05,
+            "var": 0.0004932782612740993,
+            "std": 0.02220986783504486,
+            "skews": -0.0031982134096324444,
+            "kurtosis": 0.02706003189086914
+        },
+        "roberta.encoder.layer.2.attention.self.query.bias": {
+            "mean": 0.0003922747855540365,
+            "var": 0.00015845565940253437,
+            "std": 0.012587917037308216,
+            "skews": -0.054218851029872894,
+            "kurtosis": -0.04380059242248535
+        },
+        "roberta.encoder.layer.2.attention.self.key.weight": {
+            "mean": -2.018308987317141e-05,
+            "var": 0.0004903666558675468,
+            "std": 0.022144224494695663,
+            "skews": 0.0036732752341777086,
+            "kurtosis": 0.009158611297607422
+        },
+        "roberta.encoder.layer.2.attention.self.key.bias": {
+            "mean": -0.0031964965164661407,
+            "var": 0.0041986494325101376,
+            "std": 0.06479698419570923,
+            "skews": 0.02890917658805847,
+            "kurtosis": -0.5272133350372314
+        },
+        "roberta.encoder.layer.2.attention.self.value.weight": {
+            "mean": 2.3191323634819128e-05,
+            "var": 0.00044222702854312956,
+            "std": 0.021029194816946983,
+            "skews": -0.0043215155601501465,
+            "kurtosis": 0.014162778854370117
+        },
+        "roberta.encoder.layer.2.attention.self.value.bias": {
+            "mean": -0.00020431968732737005,
+            "var": 1.0524529898248147e-05,
+            "std": 0.0032441532239317894,
+            "skews": -0.027376186102628708,
+            "kurtosis": -0.059905290603637695
+        },
+        "roberta.encoder.layer.2.attention.output.dense.weight": {
+            "mean": -5.271604095469229e-05,
+            "var": 0.0004438565520104021,
+            "std": 0.021067902445793152,
+            "skews": 0.0026128601748496294,
+            "kurtosis": 0.005318880081176758
+        },
+        "roberta.encoder.layer.2.attention.output.dense.bias": {
+            "mean": -7.541957074863603e-06,
+            "var": 2.058518657577224e-05,
+            "std": 0.004537090193480253,
+            "skews": -0.06039562448859215,
+            "kurtosis": 0.24531984329223633
+        },
+        "roberta.encoder.layer.2.attention.output.LayerNorm.weight": {
+            "mean": 1.0000793933868408,
+            "var": 0.00012302643153816462,
+            "std": 0.011091727763414383,
+            "skews": -1.9482730627059937,
+            "kurtosis": 4.888921737670898
+        },
+        "roberta.encoder.layer.2.attention.output.LayerNorm.bias": {
+            "mean": -3.71923488273751e-05,
+            "var": 3.902014213963412e-05,
+            "std": 0.006246610544621944,
+            "skews": 0.01320443581789732,
+            "kurtosis": 0.33077311515808105
+        },
+        "roberta.encoder.layer.2.intermediate.dense.weight": {
+            "mean": 8.387058187508956e-06,
+            "var": 0.0004418727767188102,
+            "std": 0.02102077007293701,
+            "skews": 0.005556351039558649,
+            "kurtosis": 0.002329587936401367
+        },
+        "roberta.encoder.layer.2.intermediate.dense.bias": {
+            "mean": -0.009634435176849365,
+            "var": 2.793235398712568e-05,
+            "std": 0.005285106599330902,
+            "skews": -0.15970686078071594,
+            "kurtosis": -0.09573221206665039
+        },
+        "roberta.encoder.layer.2.output.dense.weight": {
+            "mean": 1.288542193833564e-06,
+            "var": 0.0004400797188282013,
+            "std": 0.02097807638347149,
+            "skews": -0.0006932176765985787,
+            "kurtosis": -0.001340627670288086
+        },
+        "roberta.encoder.layer.2.output.dense.bias": {
+            "mean": -1.412178244208917e-05,
+            "var": 6.704325642203912e-06,
+            "std": 0.0025892711710184813,
+            "skews": -0.010246580466628075,
+            "kurtosis": 0.02357172966003418
+        },
+        "roberta.encoder.layer.2.output.LayerNorm.weight": {
+            "mean": 1.001415729522705,
+            "var": 4.947700654156506e-05,
+            "std": 0.0070339892990887165,
+            "skews": -1.0769517421722412,
+            "kurtosis": 2.3169164657592773
+        },
+        "roberta.encoder.layer.2.output.LayerNorm.bias": {
+            "mean": 4.2172076064161956e-05,
+            "var": 2.4678256522747688e-05,
+            "std": 0.0049677216447889805,
+            "skews": 0.06815317273139954,
+            "kurtosis": -0.046553850173950195
+        },
+        "roberta.encoder.layer.3.attention.self.query.weight": {
+            "mean": -4.090392394573428e-05,
+            "var": 0.00046766569721512496,
+            "std": 0.02162558026611805,
+            "skews": -0.0014705877983942628,
+            "kurtosis": -0.00661468505859375
+        },
+        "roberta.encoder.layer.3.attention.self.query.bias": {
+            "mean": 8.51980148581788e-05,
+            "var": 9.460485307499766e-05,
+            "std": 0.009726502932608128,
+            "skews": 0.014160580933094025,
+            "kurtosis": -0.31264686584472656
+        },
+        "roberta.encoder.layer.3.attention.self.key.weight": {
+            "mean": -4.7693367378087714e-05,
+            "var": 0.00046737160300835967,
+            "std": 0.021618779748678207,
+            "skews": -0.0012577144661918283,
+            "kurtosis": -0.0005905628204345703
+        },
+        "roberta.encoder.layer.3.attention.self.key.bias": {
+            "mean": 0.003086585085839033,
+            "var": 0.005872996058315039,
+            "std": 0.07663547247648239,
+            "skews": 0.0052658384665846825,
+            "kurtosis": -0.6769688129425049
+        },
+        "roberta.encoder.layer.3.attention.self.value.weight": {
+            "mean": 1.7175902030430734e-05,
+            "var": 0.00042318154009990394,
+            "std": 0.020571377128362656,
+            "skews": -0.00043173765880055726,
+            "kurtosis": -0.006289243698120117
+        },
+        "roberta.encoder.layer.3.attention.self.value.bias": {
+            "mean": 4.587553848978132e-05,
+            "var": 9.208594747178722e-06,
+            "std": 0.0030345667619258165,
+            "skews": -0.0037155449390411377,
+            "kurtosis": 0.029775619506835938
+        },
+        "roberta.encoder.layer.3.attention.output.dense.weight": {
+            "mean": 5.2686019103020953e-08,
+            "var": 0.00042321780347265303,
+            "std": 0.020572258159518242,
+            "skews": -0.002128210384398699,
+            "kurtosis": 0.011586189270019531
+        },
+        "roberta.encoder.layer.3.attention.output.dense.bias": {
+            "mean": 5.4264432947093155e-06,
+            "var": 2.496104389138054e-05,
+            "std": 0.004996102768927813,
+            "skews": 0.024337410926818848,
+            "kurtosis": 0.5586535930633545
+        },
+        "roberta.encoder.layer.3.attention.output.LayerNorm.weight": {
+            "mean": 1.001712679862976,
+            "var": 4.304439062252641e-05,
+            "std": 0.006560822483152151,
+            "skews": -1.0286214351654053,
+            "kurtosis": 2.2424263954162598
+        },
+        "roberta.encoder.layer.3.attention.output.LayerNorm.bias": {
+            "mean": 1.680224340816494e-05,
+            "var": 5.4459866078104824e-05,
+            "std": 0.007379692979156971,
+            "skews": 0.02170250378549099,
+            "kurtosis": 0.7777061462402344
+        },
+        "roberta.encoder.layer.3.intermediate.dense.weight": {
+            "mean": 3.5257264698884683e-06,
+            "var": 0.00044692339724861085,
+            "std": 0.021140562370419502,
+            "skews": 0.004344319459050894,
+            "kurtosis": 0.0036835670471191406
+        },
+        "roberta.encoder.layer.3.intermediate.dense.bias": {
+            "mean": -0.00914069265127182,
+            "var": 2.586978916951921e-05,
+            "std": 0.005086235236376524,
+            "skews": -0.162030428647995,
+            "kurtosis": 0.010679960250854492
+        },
+        "roberta.encoder.layer.3.output.dense.weight": {
+            "mean": -6.022597176524869e-07,
+            "var": 0.0004414769064169377,
+            "std": 0.0210113525390625,
+            "skews": 0.0012369839241728187,
+            "kurtosis": 0.007577419281005859
+        },
+        "roberta.encoder.layer.3.output.dense.bias": {
+            "mean": 3.719493906828575e-05,
+            "var": 1.1058556083298754e-05,
+            "std": 0.003325440688058734,
+            "skews": -0.1612115502357483,
+            "kurtosis": -0.026562213897705078
+        },
+        "roberta.encoder.layer.3.output.LayerNorm.weight": {
+            "mean": 1.001402735710144,
+            "var": 2.4486411348334514e-05,
+            "std": 0.004948374815285206,
+            "skews": -0.23433759808540344,
+            "kurtosis": 0.6789224147796631
+        },
+        "roberta.encoder.layer.3.output.LayerNorm.bias": {
+            "mean": -4.271932630217634e-05,
+            "var": 3.961387847084552e-05,
+            "std": 0.006293955724686384,
+            "skews": -0.03635729104280472,
+            "kurtosis": -0.09168672561645508
+        },
+        "roberta.encoder.layer.4.attention.self.query.weight": {
+            "mean": 2.0863762983935885e-05,
+            "var": 0.0004690568894147873,
+            "std": 0.02165772207081318,
+            "skews": 0.001370094483718276,
+            "kurtosis": -0.0005536079406738281
+        },
+        "roberta.encoder.layer.4.attention.self.query.bias": {
+            "mean": -5.503653665073216e-05,
+            "var": 5.567464904743247e-05,
+            "std": 0.007461544591933489,
+            "skews": -0.09035860747098923,
+            "kurtosis": -0.42938733100891113
+        },
+        "roberta.encoder.layer.4.attention.self.key.weight": {
+            "mean": -2.6013600290752947e-05,
+            "var": 0.00046893939725123346,
+            "std": 0.02165500819683075,
+            "skews": 0.0019553564488887787,
+            "kurtosis": 0.004819154739379883
+        },
+        "roberta.encoder.layer.4.attention.self.key.bias": {
+            "mean": 0.0018858504481613636,
+            "var": 0.007203991990536451,
+            "std": 0.08487633615732193,
+            "skews": -0.05181723088026047,
+            "kurtosis": -0.5182955265045166
+        },
+        "roberta.encoder.layer.4.attention.self.value.weight": {
+            "mean": 3.4278393286513165e-05,
+            "var": 0.00042073873919434845,
+            "std": 0.020511917769908905,
+            "skews": 0.005348401144146919,
+            "kurtosis": 0.0131378173828125
+        },
+        "roberta.encoder.layer.4.attention.self.value.bias": {
+            "mean": -8.499067917000502e-05,
+            "var": 6.5524063757038675e-06,
+            "std": 0.002559766871854663,
+            "skews": 0.09262602031230927,
+            "kurtosis": 0.040167808532714844
+        },
+        "roberta.encoder.layer.4.attention.output.dense.weight": {
+            "mean": -3.3162916224682704e-05,
+            "var": 0.0004213651700410992,
+            "std": 0.020527182146906853,
+            "skews": 0.004757349845021963,
+            "kurtosis": 0.0020151138305664062
+        },
+        "roberta.encoder.layer.4.attention.output.dense.bias": {
+            "mean": 0.00010622192348819226,
+            "var": 3.061251118197106e-05,
+            "std": 0.005532857496291399,
+            "skews": 0.09102734178304672,
+            "kurtosis": 0.1488513946533203
+        },
+        "roberta.encoder.layer.4.attention.output.LayerNorm.weight": {
+            "mean": 1.0036873817443848,
+            "var": 2.402456448180601e-05,
+            "std": 0.004901485983282328,
+            "skews": -0.17311879992485046,
+            "kurtosis": 0.7263455390930176
+        },
+        "roberta.encoder.layer.4.attention.output.LayerNorm.bias": {
+            "mean": -3.894742621923797e-05,
+            "var": 0.00010962331725750118,
+            "std": 0.010470115579664707,
+            "skews": 0.015637706965208054,
+            "kurtosis": 0.0650935173034668
+        },
+        "roberta.encoder.layer.4.intermediate.dense.weight": {
+            "mean": 1.9001166947418824e-05,
+            "var": 0.00045076964306645095,
+            "std": 0.021231336519122124,
+            "skews": 0.0026944426354020834,
+            "kurtosis": 0.0022954940795898438
+        },
+        "roberta.encoder.layer.4.intermediate.dense.bias": {
+            "mean": -0.007165838032960892,
+            "var": 2.477175439707935e-05,
+            "std": 0.004977122880518436,
+            "skews": 0.04868491739034653,
+            "kurtosis": -0.0690462589263916
+        },
+        "roberta.encoder.layer.4.output.dense.weight": {
+            "mean": -1.4121118510956876e-05,
+            "var": 0.0004394958959892392,
+            "std": 0.020964156836271286,
+            "skews": -0.0006596668972633779,
+            "kurtosis": -0.0009326934814453125
+        },
+        "roberta.encoder.layer.4.output.dense.bias": {
+            "mean": -1.4505638318951242e-05,
+            "var": 3.1701049010735005e-05,
+            "std": 0.0056303683668375015,
+            "skews": 0.01789228431880474,
+            "kurtosis": 0.025606155395507812
+        },
+        "roberta.encoder.layer.4.output.LayerNorm.weight": {
+            "mean": 1.0013538599014282,
+            "var": 2.1983292754157446e-05,
+            "std": 0.004688634537160397,
+            "skews": -0.12417194247245789,
+            "kurtosis": -0.19722652435302734
+        },
+        "roberta.encoder.layer.4.output.LayerNorm.bias": {
+            "mean": -2.6330139917263296e-06,
+            "var": 0.00011221171007491648,
+            "std": 0.010593002662062645,
+            "skews": 0.027125906199216843,
+            "kurtosis": -0.19787263870239258
+        },
+        "roberta.encoder.layer.5.attention.self.query.weight": {
+            "mean": -5.532274371944368e-08,
+            "var": 0.0004721443692687899,
+            "std": 0.0217288825660944,
+            "skews": 0.00020039484661538154,
+            "kurtosis": 0.015891313552856445
+        },
+        "roberta.encoder.layer.5.attention.self.query.bias": {
+            "mean": -8.160710422089323e-05,
+            "var": 7.523629756178707e-05,
+            "std": 0.008673885837197304,
+            "skews": -0.03690963611006737,
+            "kurtosis": -0.17303133010864258
+        },
+        "roberta.encoder.layer.5.attention.self.key.weight": {
+            "mean": -4.25052858190611e-05,
+            "var": 0.0004726680344901979,
+            "std": 0.021740930154919624,
+            "skews": -0.002768050180748105,
+            "kurtosis": 0.004945993423461914
+        },
+        "roberta.encoder.layer.5.attention.self.key.bias": {
+            "mean": 0.000878833350725472,
+            "var": 0.00573193933814764,
+            "std": 0.07570957392454147,
+            "skews": -0.022919252514839172,
+            "kurtosis": -0.263958215713501
+        },
+        "roberta.encoder.layer.5.attention.self.value.weight": {
+            "mean": -2.055423829006031e-05,
+            "var": 0.0004407960514072329,
+            "std": 0.020995143800973892,
+            "skews": -0.0037400913424789906,
+            "kurtosis": 0.013627052307128906
+        },
+        "roberta.encoder.layer.5.attention.self.value.bias": {
+            "mean": -7.397535227937624e-05,
+            "var": 4.758755494549405e-06,
+            "std": 0.002181457122787833,
+            "skews": 0.08433835208415985,
+            "kurtosis": -0.016766786575317383
+        },
+        "roberta.encoder.layer.5.attention.output.dense.weight": {
+            "mean": -1.2045622497680597e-05,
+            "var": 0.0004366167413536459,
+            "std": 0.020895376801490784,
+            "skews": 0.0029496452771127224,
+            "kurtosis": 0.008470535278320312
+        },
+        "roberta.encoder.layer.5.attention.output.dense.bias": {
+            "mean": 8.662251639179885e-05,
+            "var": 3.9924398151924834e-05,
+            "std": 0.006318575702607632,
+            "skews": 0.056425854563713074,
+            "kurtosis": -0.30121421813964844
+        },
+        "roberta.encoder.layer.5.attention.output.LayerNorm.weight": {
+            "mean": 1.0052305459976196,
+            "var": 2.6932762921205722e-05,
+            "std": 0.005189678631722927,
+            "skews": -0.0008771444554440677,
+            "kurtosis": -0.46051597595214844
+        },
+        "roberta.encoder.layer.5.attention.output.LayerNorm.bias": {
+            "mean": 8.962022548075765e-05,
+            "var": 0.0001882835931610316,
+            "std": 0.0137216467410326,
+            "skews": 0.046649038791656494,
+            "kurtosis": -0.4486846923828125
+        },
+        "roberta.encoder.layer.5.intermediate.dense.weight": {
+            "mean": -3.0786557090323186e-06,
+            "var": 0.00045341672375798225,
+            "std": 0.021293584257364273,
+            "skews": 0.0010286197066307068,
+            "kurtosis": 0.011502504348754883
+        },
+        "roberta.encoder.layer.5.intermediate.dense.bias": {
+            "mean": -0.005148021969944239,
+            "var": 1.7019634469761513e-05,
+            "std": 0.0041254861280322075,
+            "skews": -0.07188977301120758,
+            "kurtosis": 0.17030692100524902
+        },
+        "roberta.encoder.layer.5.output.dense.weight": {
+            "mean": -1.4178122000885196e-05,
+            "var": 0.00043677978101186454,
+            "std": 0.020899277180433273,
+            "skews": 0.0002216433931607753,
+            "kurtosis": 0.002239704132080078
+        },
+        "roberta.encoder.layer.5.output.dense.bias": {
+            "mean": -1.8580063624540344e-05,
+            "var": 6.884078902658075e-05,
+            "std": 0.008297034539282322,
+            "skews": -0.01831641048192978,
+            "kurtosis": -0.5281667709350586
+        },
+        "roberta.encoder.layer.5.output.LayerNorm.weight": {
+            "mean": 0.9948756694793701,
+            "var": 3.1040297471918166e-05,
+            "std": 0.005571382120251656,
+            "skews": 0.050558920949697495,
+            "kurtosis": -0.2686913013458252
+        },
+        "roberta.encoder.layer.5.output.LayerNorm.bias": {
+            "mean": -0.0007708113407716155,
+            "var": 0.00015204621013253927,
+            "std": 0.01233070157468319,
+            "skews": 0.03216458484530449,
+            "kurtosis": -0.5923676490783691
+        },
+        "lm_head.bias": {
+            "mean": -0.10473798960447311,
+            "var": 0.017958510667085648,
+            "std": 0.13400936126708984,
+            "skews": -3.461611032485962,
+            "kurtosis": 15.571043014526367
+        },
+        "lm_head.dense.weight": {
+            "mean": -5.753549703513272e-05,
+            "var": 0.0004549279110506177,
+            "std": 0.021329039707779884,
+            "skews": 0.12207791954278946,
+            "kurtosis": 0.6796162128448486
+        },
+        "lm_head.dense.bias": {
+            "mean": 0.004165387246757746,
+            "var": 0.0001435967569705099,
+            "std": 0.01198318600654602,
+            "skews": -3.1123368740081787,
+            "kurtosis": 11.137622833251953
+        },
+        "lm_head.layer_norm.weight": {
+            "mean": 1.3379936218261719,
+            "var": 0.009413029067218304,
+            "std": 0.09702076762914658,
+            "skews": -2.1479222774505615,
+            "kurtosis": 4.95880126953125
+        },
+        "lm_head.layer_norm.bias": {
+            "mean": 0.006280971225351095,
+            "var": 0.0013993699103593826,
+            "std": 0.03740815445780754,
+            "skews": 0.11788497865200043,
+            "kurtosis": -1.3045988082885742
+        }
+    },
+    "average_kurtosis": {
+        "attention.output.dense.weight": {
+            "avg": 0.010553916295369467,
+            "std": 0.007642577306507494
+        },
+        "attention.output.dense.bias": {
+            "avg": 0.3474026123682658,
+            "std": 0.4161785147015999
+        },
+        "attention.output.LayerNorm.weight": {
+            "avg": 3.241640090942383,
+            "std": 2.5813593869454015
+        },
+        "attention.output.LayerNorm.bias": {
+            "avg": 0.3888438145319621,
+            "std": 0.4685871193851064
+        }
     }
 }
