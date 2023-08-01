@@ -116,7 +116,7 @@ class RobertaSelfAttentionSoftmax1(RobertaSelfAttention):
             attention_scores = attention_scores + attention_mask
 
         # Normalize the attention scores to probabilities.
-        attention_probs = softmax_1(attention_scores)  # *** modified by CWM ***
+        attention_probs = softmax_1(attention_scores, dim=-1)  # *** modified by CWM ***
 
         # This is actually dropping out entire tokens to attend to, which might
         # seem a bit unusual, but is taken from the original Transformer paper.
