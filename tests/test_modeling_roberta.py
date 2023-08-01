@@ -54,9 +54,9 @@ def test_roberta_for_masked_lm_softmax1(config, hidden_size, num_params_in_milli
     assert isfinite(output_2.logits).all()
 
 
-def test_roberta_self_attention_softmax1(config):
+def test_roberta_self_attention_softmax1(config, hidden_size):
     self_attention = RobertaSelfAttentionSoftmax1(config)
-    input = randn(1, 23, 421)  # the actual size doesn't matter, so long as the input has 3-dimensions
+    input = randn(1, hidden_size, hidden_size)  # the hidden_size must be used here
     output = self_attention(input)
     assert isfinite(output[0]).all()
 
