@@ -15,7 +15,7 @@ from transformers import (
     RobertaForMaskedLM
 )
 
-from src.modeling_roberta import RobertaForMaskedLM as RobertaForMaskedLMSoftmax1
+from src.modeling_roberta import RobertaForMaskedLMSoftmax1
 from src.statistics import compute_statistics, save_statistics
 
 
@@ -92,11 +92,11 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
 
     # Compute kurtosis and other stats
     stats = compute_statistics(model)
-    save_statistics(stats, output_dir)
 
     # Save final model (+ tokenizer.json + config)
     if not test_pipeline:
         try:
+            save_statistics(stats, output_dir)
             login(token=getenv("HUGGINGFACE_TOKEN"))
             trainer.push_to_hub()
         except (ValueError, RuntimeError, OSError, FileNotFoundError, TypeError) as e:  # I've seen it all XD

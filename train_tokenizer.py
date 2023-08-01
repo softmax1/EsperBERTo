@@ -34,7 +34,7 @@ def train(test_pipeline: bool = False):
         try:
             login(token=getenv("HUGGINGFACE_TOKEN"))
             dataset = load_dataset(path=str(data_dir))
-            dataset.push_to_hub(repo_id=f"{getenv('HUGGINGFACE_USER')}/esperberto")
+            dataset.push_to_hub(repo_id=f"{getenv('HUGGINGFACE_USER')}/esperanto")
         except ValueError as e:
             warn(f"Unable to upload dataset due to, {e}.", UserWarning)
         finally:
