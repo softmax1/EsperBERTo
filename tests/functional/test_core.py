@@ -39,14 +39,14 @@ def test_softmax_n_with_padding(input_data, expected_numerators, expected_denomi
             expected_answer = expected_numerators[idx][jdx] / expected_denominators[idx]
             assert output_0_builtin[idx][jdx].item() == approx(expected_answer)
 
-    output_0 = softmax_n_with_padding(input_data, 0)
+    output_0 = softmax_n_with_padding(input_data, 0, dim=-1)
     assert output_0.size() == input_data.size()
     for idx in range(idx_max):
         for jdx in range(jdx_max):
             assert output_0[idx][jdx].item() == approx(output_0_builtin[idx][jdx])
 
     for n in range(1, 7, 3):
-        output = softmax_n_with_padding(input_data, n)
+        output = softmax_n_with_padding(input_data, n, dim=-1)
         assert output.size() == input_data.size()
         for idx in range(idx_max):
             for jdx in range(jdx_max):
@@ -54,24 +54,19 @@ def test_softmax_n_with_padding(input_data, expected_numerators, expected_denomi
                 assert output[idx][jdx].item() == approx(expected_answer)
 
 
-def test_softmax_n(input_data, expected_numerators, expected_denominators):
+def test_softmax_n_shifted_zeros(input_data, expected_numerators, expected_denominators):
     idx_max, jdx_max = input_data.size()
 
     output_0_builtin = softmax(input_data, dim=-1)
-    assert output_0_builtin.size() == input_data.size()
-    for idx in range(idx_max):
-        for jdx in range(jdx_max):
-            expected_answer = expected_numerators[idx][jdx] / expected_denominators[idx]
-            assert output_0_builtin[idx][jdx].item() == approx(expected_answer)
 
-    output_0 = softmax_n_shifted_zeros(input_data, 0)
+    output_0 = softmax_n_shifted_zeros(input_data, 0, dim=-1)
     assert output_0.size() == input_data.size()
     for idx in range(idx_max):
         for jdx in range(jdx_max):
             assert output_0[idx][jdx].item() == approx(output_0_builtin[idx][jdx])
 
     for n in range(1, 7, 3):
-        output = softmax_n_with_padding(input_data, n)
+        output = softmax_n_shifted_zeros(input_data, n, dim=-1)
         assert output.size() == input_data.size()
         for idx in range(idx_max):
             for jdx in range(jdx_max):
@@ -82,7 +77,7 @@ def test_softmax_n(input_data, expected_numerators, expected_denominators):
 def test_softmax_1(input_data, expected_numerators, expected_denominators):
     idx_max, jdx_max = input_data.size()
 
-    output_1 = softmax_1(input_data)
+    output_1 = softmax_1(input_data, dim=-1)
     assert output_1.size() == input_data.size()
     for idx in range(idx_max):
         for jdx in range(jdx_max):
