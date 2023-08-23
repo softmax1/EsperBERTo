@@ -22,7 +22,7 @@ def train(test_pipeline: bool = False):
 
     # Customize training
     special_tokens = ["<s>", "<pad>", "</s>", "<unk>", "<mask>", ]
-    tokenizer.train(files=paths, vocab_size=52032, min_frequency=2, special_tokens=special_tokens)
+    tokenizer.train(files=paths, vocab_size=52_032, min_frequency=2, special_tokens=special_tokens)
 
     if not test_pipeline:
         # Now let's save files to disk

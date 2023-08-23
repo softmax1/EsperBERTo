@@ -26,7 +26,7 @@ def hidden_size() -> int:
 @fixture(scope='session')
 def config() -> RobertaConfigSoftmax1:
     return RobertaConfigSoftmax1(
-        vocab_size=52_000,
+        vocab_size=52_032,
         max_position_embeddings=514,
         num_attention_heads=12,
         num_hidden_layers=6,
