@@ -47,10 +47,13 @@ def save_activations_kurtosis(
         inp: Tuple,
         out: Tensor
 ) -> None:
-    """PyTorch Forward hook to save outputs at each forward
-    pass. Mutates specified dict objects with each fwd pass.
     """
-    activations[name].append(kurtosis(out.detach()))
+    PyTorch Forward hook to compute moving average of kurtosis (and its 2nd moment) at each forward pass.
+    Mutates specified dict objects with each fwd pass.
+    """
+    k = kurtosis(out.detach())
+    n, mu, mu2 = activations[name]
+    activations[name] = [n + 1, (n * mu + k) / (n + 1), (n * mu2 + k**2) / (n + 1)]
 
 
 def register_activation_hooks(
@@ -71,7 +74,7 @@ def register_activation_hooks(
         dict of lists containing activations of specified layers in
         ``layers_to_save``.
     """
-    activations_dict = defaultdict(list)
+    activations_dict = defaultdict(lambda: [0, 0., 0.])
 
     for name, module in model.named_modules():
         if layers_to_save is None or name in layers_to_save:
@@ -97,6 +100,7 @@ def compute_weight_statistics(model: PreTrainedModel) -> Dict[str, Dict[str, flo
     weight_stats = defaultdict(list)
     for name in layer_kurtosis:
         if 'attention.output' in name:
-            weight_stats[name].append(layer_kurtosis[name])
+            truncated_name = '.'.join(name.split('.')[-4:])
+            weight_stats[truncated_name].append(layer_kurtosis[name])
 
     return {name: compute_avg_and_std(kurtoses) for name, kurtoses in weight_stats.items()}

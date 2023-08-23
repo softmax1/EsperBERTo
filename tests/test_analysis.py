@@ -52,5 +52,10 @@ def test_register_activation_hooks(acts_to_save):
     for _ in range(num_fwd):
         mdl(images[_])
 
+    if to_save is not None:
+        assert len(saved_activations) == len(to_save)
     for activation in saved_activations:
-        assert len(saved_activations[activation]) == num_fwd
+        assert len(saved_activations[activation]) == 3
+        assert saved_activations[activation][0] == num_fwd
+        assert saved_activations[activation][2] >= 0.
+        assert saved_activations[activation][2] >= saved_activations[activation][1]**2
