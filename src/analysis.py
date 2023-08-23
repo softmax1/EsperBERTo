@@ -87,18 +87,25 @@ def register_activation_hooks(
 # Analysis
 def compute_activation_statistics(saved_activation_kurtosis: Dict[str, List[float]]) -> Dict[str, Dict[str, float]]:
     activation_kurtosis = {activation: val[1] for activation, val in saved_activation_kurtosis.items()}
-    return activation_kurtosis
+
+    activation_stats = defaultdict(list)
+    for name in activation_kurtosis:
+        if 'attention.output' in name:
+            truncated_name = '.'.join(name.split('.')[-4:])
+            activation_stats[truncated_name].append(activation_kurtosis[name])
+
+    activation_avg_attn_kurt = {name: compute_avg_and_std(kurtoses) for name, kurtoses in activation_stats.items()}
+    return {'activation_kurtosis': activation_kurtosis, 'activation_avg_attn_kurt': activation_avg_attn_kurt}
 
 
 def compute_weight_statistics(model: PreTrainedModel) -> Dict[str, Dict[str, float]]:
-    layer_kurtosis = dict()
-    for name, param in model.named_parameters():
-        layer_kurtosis[name] = kurtosis(param)
+    weight_kurtosis = {name: kurtosis(param) for name, param in model.named_parameters()}
 
     weight_stats = defaultdict(list)
-    for name in layer_kurtosis:
+    for name in weight_kurtosis:
         if 'attention.output' in name:
             truncated_name = '.'.join(name.split('.')[-4:])
-            weight_stats[truncated_name].append(layer_kurtosis[name])
+            weight_stats[truncated_name].append(weight_kurtosis[name])
 
-    return {name: compute_avg_and_std(kurtoses) for name, kurtoses in weight_stats.items()}
+    weight_avg_attn_kurt = {name: compute_avg_and_std(kurtoses) for name, kurtoses in weight_stats.items()}
+    return {'weight_kurtosis': weight_kurtosis, 'activation_avg_attn_kurt': weight_avg_attn_kurt}
