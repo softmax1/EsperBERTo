@@ -55,8 +55,7 @@ def softmax_n_with_padding(input: Tensor, n: int, dim: Optional[int] = None, dty
     padded_output = softmax(padded_input, dim=dim)
     # select the indices to keep
     # note that because we're creating this tensor it won't automatically be placed on the correct device
-    device = 'cuda' if is_available() else 'cpu'
-    indices_to_keep = arange(input.size()[dim], device=device)
+    indices_to_keep = arange(input.size()[dim], device=input.device)
     # un-pad the result
     output = index_select(padded_output, dim=dim, index=indices_to_keep)
     return output if dtype is None else output.type(dtype=dtype)
