@@ -1,5 +1,5 @@
 from pytest import approx, mark
-from torch import randn
+from torch import randn, rand
 from torch.nn import Module, Conv2d
 from torch.nn.functional import relu
 
@@ -19,8 +19,10 @@ def test_compute_avg_and_std():
 
 
 def test_kurtosis():
-    output = kurtosis(randn(10000))
-    assert output == approx(0., abs=0.1)
+    normal_kurtosis = kurtosis(randn(10000))
+    assert normal_kurtosis == approx(0., abs=0.1)
+    uniform_kurtosis = kurtosis(rand(10000))
+    assert uniform_kurtosis == approx(-1.2, abs=0.1)
 
 
 class Net(Module):

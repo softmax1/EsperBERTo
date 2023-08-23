@@ -10,10 +10,13 @@ from transformers import PreTrainedModel
 
 
 # Statistics
-def kurtosis(out: Tensor) -> float:
-    diffs = out - mean(out)
-    stdev = pow(mean(pow(diffs, 2.)), 0.5)
-    excess_kurtosis = mean(pow(diffs / stdev, 4.)) - 3.
+def kurtosis(x: Tensor) -> float:
+    """
+    kurtosis[x] = E[y^2] / (E[y])^2, where y = (x - E[x])^2
+    excess_kurtosis = kurtosis - 3
+    """
+    y = pow(x - mean(x), 2)
+    excess_kurtosis = mean(pow(y, 2)) / pow(mean(y), 2) - 3.
     return excess_kurtosis.item()
 
 
