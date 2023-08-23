@@ -1,9 +1,26 @@
-from pytest import mark
+from pytest import approx, mark
 from torch import randn
 from torch.nn import Module, Conv2d
 from torch.nn.functional import relu
 
-from src.activation import register_activation_hooks
+from src.analysis import compute_avg_and_std, kurtosis, register_activation_hooks
+
+
+def test_compute_avg_and_std():
+    input_1 = [3, 4]
+    output_1 = compute_avg_and_std(input_1)
+    assert output_1['avg'] == 3.5
+    assert output_1['std'] == 0.5
+
+    input_2 = [5, 12]
+    output_2 = compute_avg_and_std(input_2)
+    assert output_2['avg'] == 8.5
+    assert output_2['std'] == 3.5
+
+
+def test_kurtosis():
+    output = kurtosis(randn(10000))
+    assert output == approx(0., abs=0.1)
 
 
 class Net(Module):
