@@ -1,11 +1,29 @@
 # EsperBERTo
-A test of the [Attention Is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html) hypothesis.
-We’ll train a "small" model (84 M parameters = 6 layers, 768 hidden size, 12 attention heads) on Esperanto.
-In fact, we'll train two models, a baseline that uses the default softmax in its Attention mechanism, and a challenger that instead uses the proposed softmax1.
+A test of the [Attention Is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html) hypothesis with RoBERTA and Esperanto.
 
-This pipeline is based on this [blog post](https://huggingface.co/blog/how-to-train) with two differences.
-The biggest change is I subclassed the Roberta model to use a custom softmax1 activation function.
-Also, their dataloader is deprecated, so I swapped in the datasets package.
+## Dataset
+The dataset is the Esperanto portion of the [OSCAR](https://cdn-datasets.huggingface.co/EsperBERTo/data/oscar.eo.txt) corpus from INRIA, which is a part of Common Crawl.
+Additionally, the dataset contains the Esperanto sub-corpus of the [Leipzig Corpora Collection](https://wortschatz.uni-leipzig.de/en/download/Esperanto).
+In particular, along with OSCAR, I use the following `epo_*-sentences.txt` files from the Leipzig Corpora:
+
+| Dataset          | Year | # of Sentences |
+|------------------|------|----------------|
+| OSCAR            | 2020 | 974k           |
+| LCC - Literature | 2011 | 300k           |
+| LCC - Mixed      | 2012 | 1M             |
+| LCC - Newscrawl  | 2017 | 1M             |
+| LCC - Web        | 2012 | 1M             |
+| LCC - Wikipedia  | 2021 | 300k           |
+| total            | -    | 4.57M          |
+
+The dataset is 473 MB.
+
+
+## Model
+The models are RoBERTa with 84M parameters.
+The first model is a baseline that uses the default softmax in its Attention mechanism, and a challenger that instead uses the proposed softmax1.
+The models are also available on Hugging Face at [chriswmurphy/esperberto-softmax0](https://huggingface.co/chriswmurphy/esperberto-softmax0) and [chriswmurphy/esperberto-softmax1](https://huggingface.co/chriswmurphy/esperberto-softmax1). 
+The idea to use RoBERTa with Esperanto came from this [blog post](https://huggingface.co/blog/how-to-train).
 
 ## Running
 I'm running on an AWS _g5.2xlarge_ EC2 instance with 1x Nvidia A10G GPU.
@@ -23,7 +41,6 @@ To run the unit tests do `pytest tests`.
 
 ## Output
 The dataset is available on Hugging Face at [chriswmurphy/esperanto](https://huggingface.co/datasets/chriswmurphy/esperanto).
-The models are also available on Hugging Face at [chriswmurphy/esperberto-softmax0](https://huggingface.co/chriswmurphy/esperberto-softmax0) and [chriswmurphy/esperberto-softmax1](https://huggingface.co/chriswmurphy/esperberto-softmax1).
 
 ## Results
 Here we report the average (excess) kurtosis in the Attention output layers from our initial run.
