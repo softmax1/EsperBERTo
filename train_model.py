@@ -21,7 +21,7 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     # We'll define the following config for the model
     n = 1 if use_softmax1 else 0
     config = RobertaConfigSoftmax1(
-        vocab_size=52_032,  # divisible by 64
+        vocab_size=52032,  # divisible by 64
         max_position_embeddings=514,
         num_attention_heads=12,
         num_hidden_layers=6,
@@ -41,9 +41,8 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     saved_activation_kurtosis = register_activation_hooks(model)
 
     # Load the raw dataset
-    data_dir = Path.cwd() / "data"
     split = 'train[:2]' if test_pipeline else 'train'
-    dataset = load_dataset(path=str(data_dir), split=split)
+    dataset = load_dataset(f"{getenv('HUGGINGFACE_USER')}/esperanto", split=split)
 
     # We'll build our dataset by applying our tokenizer.json to our text file.
     def process_data(examples):
