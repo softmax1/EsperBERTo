@@ -41,7 +41,7 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     saved_activation_kurtosis = register_activation_hooks(model)
 
     # Load the raw dataset
-    split = 'train[:2]' if test_pipeline else 'train'
+    split = 'train[:128]' if test_pipeline else 'train'
     dataset = load_dataset(f"{getenv('HUGGINGFACE_USER')}/esperanto", split=split)
 
     # We'll build our dataset by applying our tokenizer.json to our text file.
@@ -82,7 +82,7 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
 
     # Start training
     trainer.train()
-
+    
     # Compute kurtosis and other stats
     results = {
         'trainer_log': trainer.state.log_history,
@@ -90,6 +90,7 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
         'activation_kurtosis': compute_activation_statistics(saved_activation_kurtosis)
     }
 
+                  
     # Save final model (+ tokenizer.json + config)
     if not test_pipeline:
         try:

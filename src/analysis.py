@@ -91,7 +91,8 @@ def compute_activation_statistics(saved_activation_kurtosis: Dict[str, List[floa
     activation_stats = defaultdict(list)
     for name in activation_kurtosis:
         if 'attention.output' in name:
-            truncated_name = '.'.join(name.split('.')[-4:])
+            x = -2 if name.endswith('attention.output') else -3
+            truncated_name = '.'.join(name.split('.')[x:])
             activation_stats[truncated_name].append(activation_kurtosis[name])
 
     activation_avg_attn_kurt = {name: compute_avg_and_std(kurtoses) for name, kurtoses in activation_stats.items()}
@@ -108,4 +109,4 @@ def compute_weight_statistics(model: PreTrainedModel) -> Dict[str, Dict[str, flo
             weight_stats[truncated_name].append(weight_kurtosis[name])
 
     weight_avg_attn_kurt = {name: compute_avg_and_std(kurtoses) for name, kurtoses in weight_stats.items()}
-    return {'weight_kurtosis': weight_kurtosis, 'activation_avg_attn_kurt': weight_avg_attn_kurt}
+    return {'weight_kurtosis': weight_kurtosis, 'weight_avg_attn_kurt': weight_avg_attn_kurt}
