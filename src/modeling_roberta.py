@@ -18,7 +18,8 @@ from transformers.models.roberta.modeling_roberta import (
     RobertaPooler,
     _CONFIG_FOR_DOC,
     _CHECKPOINT_FOR_DOC,
-    RobertaLMHead
+    RobertaLMHead,
+    RobertaConfig
 )
 from transformers.modeling_outputs import BaseModelOutputWithPoolingAndCrossAttentions, MaskedLMOutput
 from transformers.utils import (
@@ -28,14 +29,21 @@ from transformers.utils import (
     logging
 )
 
-from src.functional import softmax_1
+from src.functional import softmax_n
 
 logger = logging.get_logger(__name__)
+
+
+class RobertaConfigSoftmax1(RobertaConfig):
+    def __init__(self, n: float = 0., **kwargs):
+        super().__init__(**kwargs)
+        self.n = n
 
 
 class RobertaSelfAttentionSoftmax1(RobertaSelfAttention):
     def __init__(self, config, position_embedding_type=None):
         super().__init__(config, position_embedding_type)
+        self.n = config.n
 
     def forward(
         self,
@@ -116,7 +124,7 @@ class RobertaSelfAttentionSoftmax1(RobertaSelfAttention):
             attention_scores = attention_scores + attention_mask
 
         # Normalize the attention scores to probabilities.
-        attention_probs = softmax_1(attention_scores, dim=-1)  # *** modified by CWM ***
+        attention_probs = softmax_n(attention_scores, n=self.n, dim=-1)  # *** modified by CWM ***
 
         # This is actually dropping out entire tokens to attend to, which might
         # seem a bit unusual, but is taken from the original Transformer paper.

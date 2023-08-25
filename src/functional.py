@@ -12,6 +12,28 @@ else:
     DType = int
 
 
+def softmax_n(
+        input: Tensor,
+        n: Optional[float] = None,
+        dim: Optional[int] = None,
+        dtype: Optional[DType] = None
+) -> Tensor:
+    """
+    $\text(softmax)_n(x_i) = exp(x_i) / (n + \sum_j exp(x_j))$
+
+    Note: softmax_n, with fixed input, is _not_ shift-symmetric when n != 0, and we must account for this.
+    Normally when computing a softmax, the maxes are subtracted from the inputs for numeric stability.
+    """
+    if n is None:
+        n = 0.
+    shift = input.max(dim=dim, keepdim=True).values.detach()
+    numerator = exp(input - shift)
+    output = numerator / (n * exp(-shift) + numerator.sum(dim=dim, keepdim=True))
+    return output if dtype is None else output.type(dtype=dtype)
+
+# Everything below here is for demonstration purposes
+
+
 def softmax_n_with_padding(input: Tensor, n: int, dim: Optional[int] = None, dtype: Optional[DType] = None) -> Tensor:
     """
     $\text(softmax)_n(x_i) = exp(x_i) / (n + sum_j exp(x_j))$
@@ -33,8 +55,7 @@ def softmax_n_with_padding(input: Tensor, n: int, dim: Optional[int] = None, dty
     padded_output = softmax(padded_input, dim=dim)
     # select the indices to keep
     # note that because we're creating this tensor it won't automatically be placed on the correct device
-    device = 'cuda' if is_available() else 'cpu'
-    indices_to_keep = arange(input.size()[dim], device=device)
+    indices_to_keep = arange(input.size()[dim], device=input.device)
     # un-pad the result
     output = index_select(padded_output, dim=dim, index=indices_to_keep)
     return output if dtype is None else output.type(dtype=dtype)
@@ -55,7 +76,7 @@ def softmax_n_shifted_zeros(input: Tensor, n: int, dim: Optional[int] = None, dt
     Normally when computing a softmax, the maxes are subtracted from the inputs for numeric stability.
     """
     # compute the maxes along the last dimension
-    input_maxes = input.max(dim=dim, keepdim=True).values
+    input_maxes = input.max(dim=dim, keepdim=True).values.detach()
     # shift the input to prevent overflow (and underflow in the denominator)
     shifted_inputs = subtract(input, input_maxes)
     # compute the numerator and softmax_0 denominator using the shifted input

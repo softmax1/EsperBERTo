@@ -1,6 +1,6 @@
 from pytest import fixture, approx
 from torch import LongTensor, randn, isfinite
-from transformers import RobertaConfig, RobertaForMaskedLM
+from transformers import RobertaForMaskedLM
 
 from src.modeling_roberta import (
     RobertaForMaskedLMSoftmax1,
@@ -8,7 +8,8 @@ from src.modeling_roberta import (
     RobertaAttentionSoftmax1,
     RobertaLayerSoftmax1,
     RobertaEncoderSoftmax1,
-    RobertaModelSoftmax1
+    RobertaModelSoftmax1,
+    RobertaConfigSoftmax1
 )
 
 
@@ -23,13 +24,14 @@ def hidden_size() -> int:
 
 
 @fixture(scope='session')
-def config() -> RobertaConfig:
-    return RobertaConfig(
-        vocab_size=52_000,
+def config() -> RobertaConfigSoftmax1:
+    return RobertaConfigSoftmax1(
+        vocab_size=52032,
         max_position_embeddings=514,
         num_attention_heads=12,
         num_hidden_layers=6,
         type_vocab_size=1,
+        n=1
     )
 
 

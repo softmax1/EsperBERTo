@@ -6,17 +6,10 @@ from datasets import load_dataset
 from dotenv import load_dotenv
 from huggingface_hub import login, logout
 from tap import Tap
-from transformers import (
-    RobertaConfig,
-    RobertaTokenizerFast,
-    DataCollatorForLanguageModeling,
-    Trainer,
-    TrainingArguments,
-    RobertaForMaskedLM
-)
+from transformers import RobertaTokenizerFast, DataCollatorForLanguageModeling, Trainer, TrainingArguments
 
-from src.modeling_roberta import RobertaForMaskedLMSoftmax1
-from src.statistics import compute_statistics, save_statistics
+from src.modeling_roberta import RobertaForMaskedLMSoftmax1, RobertaConfigSoftmax1
+from src.analysis import register_activation_hooks, compute_weight_statistics, compute_activation_statistics, save_results
 
 
 class Parser(Tap):
@@ -26,12 +19,14 @@ class Parser(Tap):
 
 def train(use_softmax1: bool = False, test_pipeline: bool = False):
     # We'll define the following config for the model
-    config = RobertaConfig(
-        vocab_size=52_000,
+    n = 1 if use_softmax1 else 0
+    config = RobertaConfigSoftmax1(
+        vocab_size=52032,  # divisible by 64
         max_position_embeddings=514,
         num_attention_heads=12,
         num_hidden_layers=6,
         type_vocab_size=1,
+        n=n
     )
 
     # Now let's re-create our tokenizer.json in transformers
@@ -40,15 +35,14 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
 
     # Finally let's initialize our model.
     # As we are training from scratch, we only initialize from a config, not from an existing pretrained model or checkpoint.
-    if use_softmax1:
-        model = RobertaForMaskedLMSoftmax1(config=config)
-    else:
-        model = RobertaForMaskedLM(config=config)
+    model = RobertaForMaskedLMSoftmax1(config=config)
+
+    # Register the model's activations so we can measure their kurtoses
+    saved_activation_kurtosis = register_activation_hooks(model)
 
     # Load the raw dataset
-    data_dir = Path.cwd() / "data"
-    split = 'train[:2]' if test_pipeline else 'train'
-    dataset = load_dataset(path=str(data_dir), split=split)
+    split = 'train[:128]' if test_pipeline else 'train'
+    dataset = load_dataset(f"{getenv('HUGGINGFACE_USER')}/esperanto", split=split)
 
     # We'll build our dataset by applying our tokenizer.json to our text file.
     def process_data(examples):
@@ -65,7 +59,6 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=True, mlm_probability=0.15)
 
     # Finally, we are all set to initialize our Trainer
-    n = 1 if use_softmax1 else 0
     output_dir = f"{getenv('HUGGINGFACE_USER')}/esperberto-softmax{n}"
 
     training_args = TrainingArguments(
@@ -89,14 +82,19 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
 
     # Start training
     trainer.train()
-
+    
     # Compute kurtosis and other stats
-    stats = compute_statistics(model)
+    results = {
+        'trainer_log': trainer.state.log_history,
+        'weight_kurtosis': compute_weight_statistics(model),
+        'activation_kurtosis': compute_activation_statistics(saved_activation_kurtosis)
+    }
 
+                  
     # Save final model (+ tokenizer.json + config)
     if not test_pipeline:
         try:
-            save_statistics(stats, output_dir)
+            save_results(results, output_dir)
             login(token=getenv("HUGGINGFACE_TOKEN"))
             trainer.push_to_hub()
         except (ValueError, RuntimeError, OSError, FileNotFoundError, TypeError) as e:  # I've seen it all XD
