@@ -16,7 +16,7 @@ In particular, along with OSCAR, I use the following `epo_*-sentences.txt` files
 | LCC - Wikipedia  | 2021 | 300k           |
 | total            | -    | 4.57M          |
 
-The dataset is 473 MB.
+The dataset is 473 MB and is available on Hugging Face at [chriswmurphy/esperanto](https://huggingface.co/datasets/chriswmurphy/esperanto).
 
 ## Model
 The models are RoBERTa with 84M parameters.
