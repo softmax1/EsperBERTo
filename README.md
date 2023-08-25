@@ -18,16 +18,42 @@ In particular, along with OSCAR, I use the following `epo_*-sentences.txt` files
 
 The dataset is 473 MB.
 
-
 ## Model
 The models are RoBERTa with 84M parameters.
 The first model is a baseline that uses the default softmax in its Attention mechanism, and a challenger that instead uses the proposed softmax1.
 The models are also available on Hugging Face at [chriswmurphy/esperberto-softmax0](https://huggingface.co/chriswmurphy/esperberto-softmax0) and [chriswmurphy/esperberto-softmax1](https://huggingface.co/chriswmurphy/esperberto-softmax1). 
 The idea to use RoBERTa with Esperanto came from this [blog post](https://huggingface.co/blog/how-to-train).
 
+## Results
+
+### Training
+As expected, softmax1 does not impact model performance at single-precision.
+
+| Model                  | Loss | Runtime | Cost   |
+|------------------------|------|---------|--------|
+| EsperBERTo w/ softmax0 | 4.46 | 9h 16m  | $11.22 |
+| EsperBERTo w/ softmax1 | 4.44 | 9h 16m  | $11.24 |
+
+### Kurtosis - Weights
+Here we report the average excess kurtosis in the Attention output weights from our initial run.
+The weights in the dense Attention layers are Gaussian to a good approximation.
+
+| Model                  | Dense Weight      | Dense Bias    | LayerNorm Weight | LayerNorm Bias |
+|------------------------|-------------------|---------------|------------------|----------------|
+| EsperBERTo w/ softmax0 | $0.031 \pm 0.021$ | $0.6 \pm 1.1$ | $6.8 \pm 3.9$    | $0.5 \pm 0.8$  |
+| EsperBERTo w/ softmax1 | $0.040 \pm 0.027$ | $1.4 \pm 1.4$ | $4.4 \pm 2.9$    | $1.9 \pm 2.3$  |
+
+### Kurtosis - Activations
+Finally, we report the average excess kurtosis in the Attention output activations from our initial run.
+Once again, there is no meaningful difference between the softmax0 and softmax1 models here, and the kurtosis in the activation of the Attention output is consistent with being Gaussian.
+
+| Model                  | Dense           | Dropout         | Output (LayerNorm) |
+|------------------------|-----------------|-----------------|--------------------|
+| EsperBERTo w/ softmax0 | $0.74 \pm 0.29$ | $1.15 \pm 0.32$ | $0.77 \pm 1.35$    |
+| EsperBERTo w/ softmax1 | $1.96 \pm 1.58$ | $2.51 \pm 1.76$ | $0.90 \pm 1.31$    |
+
 ## Running
 I'm running on an AWS _g5.2xlarge_ EC2 instance with 1x Nvidia A10G GPU.
-Running takes about 5 hours and costs approximately $6.
 
 You can use the following script to reproduce my results: `screen -S run "bash runner.sh"`
 Don't forget to add your Hugging Face token and username to the env vars before running, e.g.
@@ -37,18 +63,3 @@ echo "HUGGINGFACE_USER=<myHFUserName>" >> .env
 ```
 To test before running in earnest, add the test_pipeline flag, e.g. `python train_model.py --test_pipeline`.
 To run the unit tests do `pytest tests`.
-
-
-## Output
-The dataset is available on Hugging Face at [chriswmurphy/esperanto](https://huggingface.co/datasets/chriswmurphy/esperanto).
-
-## Results
-Here we report the average (excess) kurtosis in the Attention output layers from our initial run.
-
-| Model                   | Dense Weight      | Dense Bias      | LayerNorm Weight | LayerNorm Bias  |
-|-------------------------|-------------------|-----------------|------------------|-----------------|
-| EsperBERTo w/ softmax_0 | $0.012 \pm 0.020$ | $0.21 \pm 0.27$ | $3.5 \pm 3.3$    | $0.08 \pm 0.26$ |
-| EsperBERTo w/ softmax_1 | $0.011 \pm 0.007$ | $0.35 \pm 0.42$ | $3.2 \pm 2.6$    | $0.39 \pm 0.47$ |
-
-The weights in the dense Attention layers are Gaussian to a good approximation.
-However, I don't think any conclusions can be drawn from this because the Esperanto dataset is a mere 200 MB, which is tiny by LLM training standards.
