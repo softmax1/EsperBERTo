@@ -28,8 +28,7 @@ from transformers.utils import (
     add_code_sample_docstrings,
     logging
 )
-
-from src.functional import softmax_n
+from flash_attention_softmax_n import softmax_n
 
 logger = logging.get_logger(__name__)
 

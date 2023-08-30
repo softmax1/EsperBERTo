@@ -7,9 +7,10 @@ from dotenv import load_dotenv
 from huggingface_hub import login, logout
 from tap import Tap
 from transformers import RobertaTokenizerFast, DataCollatorForLanguageModeling, Trainer, TrainingArguments
+from flash_attention_softmax_n.analysis import save_results, register_activation_hooks
 
 from src.modeling_roberta import RobertaForMaskedLMSoftmax1, RobertaConfigSoftmax1
-from src.analysis import register_activation_hooks, compute_weight_statistics, compute_activation_statistics, save_results
+from src.analysis import process_weight_stats, process_activation_stats
 
 
 class Parser(Tap):
@@ -38,7 +39,7 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     model = RobertaForMaskedLMSoftmax1(config=config)
 
     # Register the model's activations so we can measure their kurtoses
-    saved_activation_kurtosis = register_activation_hooks(model)
+    saved_activation_stats = register_activation_hooks(model)
 
     # Load the raw dataset
     split = 'train[:128]' if test_pipeline else 'train'
@@ -86,15 +87,15 @@ def train(use_softmax1: bool = False, test_pipeline: bool = False):
     # Compute kurtosis and other stats
     results = {
         'trainer_log': trainer.state.log_history,
-        'weight_kurtosis': compute_weight_statistics(model),
-        'activation_kurtosis': compute_activation_statistics(saved_activation_kurtosis)
+        'weight_kurtosis': process_weight_stats(model),
+        'activation_kurtosis': process_activation_stats(saved_activation_stats)
     }
 
-                  
     # Save final model (+ tokenizer.json + config)
     if not test_pipeline:
         try:
-            save_results(results, output_dir)
+            model_name = output_dir.split("/")[1]
+            save_results(results, model_name)
             login(token=getenv("HUGGINGFACE_TOKEN"))
             trainer.push_to_hub()
         except (ValueError, RuntimeError, OSError, FileNotFoundError, TypeError) as e:  # I've seen it all XD
